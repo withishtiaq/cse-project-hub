@@ -20,5 +20,7 @@
         "SESSION_DRIVER": "cookie",
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php"
+        "ASSET_URL": "/",
+        "APP_ENV": "production",
     }
 }
