@@ -25,7 +25,7 @@
         .container { max-width: 1100px; margin: 40px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
-        /* আগের ক্যারোসেল ও কার্ড স্টাইল */
+        /* ক্যারোসেল স্টাইল */
         .carousel-wrapper { position: relative; display: flex; align-items: center; margin-bottom: 40px; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
@@ -38,27 +38,27 @@
 
         /* Routine Maker Section */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; }
-        .routine-input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        .day-input { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); }
-        .day-input label { display: block; color: var(--accent-color); margin-bottom: 5px; font-weight: 600; }
-        .day-input input { width: 100%; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px; border-radius: 4px; outline: none; margin-bottom: 5px; }
+        .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
+        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .day-label { color: var(--accent-color); font-weight: 600; font-size: 1.1rem; }
+        .add-class-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-weight: bold; }
+        
+        .input-row { display: flex; gap: 10px; margin-bottom: 8px; }
+        .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; }
 
-        /* Output Routine Table */
-        #routine-output { margin-top: 30px; background: white; color: black; padding: 20px; border-radius: 10px; display: none; }
+        /* Output Routine Table Design */
+        #routine-output { margin-top: 30px; background: white; color: black; padding: 30px; border-radius: 10px; display: none; }
         .routine-table { width: 100%; border-collapse: collapse; background: white; }
-        .routine-table th, .routine-table td { border: 2px solid #333; padding: 12px; text-align: center; }
-        .routine-table th { background: #eee; }
+        .routine-table th, .routine-table td { border: 1px solid #333; padding: 12px; text-align: left; }
+        .routine-table th { background: #f2f2f2; font-weight: bold; text-align: center; }
 
         /* Buttons */
         .btn-container { text-align: center; margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .main-btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: 0.3s; cursor: pointer; border: none; }
         .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
-        .routine-trigger:hover { background: var(--accent-color); color: var(--primary-bg); }
-        .gen-btn { background: #4CAF50; color: white; }
+        .gen-btn { background: #4CAF50; color: white; margin-top: 20px; }
         .download-btn { background: #ff9100; color: white; margin-top: 15px; }
         .contact-btn { background: var(--accent-color); color: var(--primary-bg); }
-        .contact-btn:hover { box-shadow: 0 0 20px var(--accent-color); transform: scale(1.05); }
-
     </style>
 </head>
 <body>
@@ -71,50 +71,46 @@
     <div class="container">
         <h2 class="section-title">Our Services</h2>
         <div class="carousel-wrapper">
-            <button class="nav-btn prev-btn" onclick="scrollLeftBtn('s-scroll')">&#10094;</button>
+            <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="s-scroll">
                 <div class="card"><h3>Software</h3><p>Custom Web & Mobile Apps.</p></div>
                 <div class="card"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
                 <div class="card"><h3>AI & ML</h3><p>Deep Learning Solutions.</p></div>
                 <div class="card"><h3>Plagiarism</h3><p>Report Checking.</p></div>
+                <div class="card"><h3>Question Unlock</h3><p>Academic Research.</p></div>
             </div>
-            <button class="nav-btn next-btn" onclick="scrollRightBtn('s-scroll')">&#10095;</button>
+            <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
 
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="r-scroll">
                 <div class="scroll-card"><h3>BRACU Student</h3><p>"Amazing hardware support!"</p></div>
                 <div class="scroll-card"><h3>CSE Learner</h3><p>"The best thesis guide."</p></div>
+                <div class="scroll-card"><h3>Research Scholar</h3><p>"Top-notch AI implementation."</p></div>
             </div>
+            <button class="nav-btn next-btn" onclick="scrollBtn('r-scroll', 1)">&#10095;</button>
         </div>
 
         <div class="btn-container">
             <button class="main-btn routine-trigger" onclick="toggleRoutineBox()">📅 Academic Routine Maker</button>
             
             <div class="routine-box" id="routine-ui">
-                <h3 style="margin-bottom: 20px; color: var(--accent-color);">Enter Your Weekly Schedule</h3>
-                <div class="routine-input-grid">
-                    <script>
-                        const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-                        days.forEach(day => {
-                            document.write(`
-                                <div class="day-input">
-                                    <label>${day}</label>
-                                    <input type="text" id="course-${day}" placeholder="Course Name">
-                                    <input type="text" id="time-${day}" placeholder="Class Time (e.g. 10:00 AM)">
-                                </div>
-                            `);
-                        });
-                    </script>
-                </div>
+                <h3 style="margin-bottom: 20px; color: var(--accent-color);">Create Your Dynamic Schedule</h3>
+                <div id="day-inputs-container">
+                    </div>
+                
                 <button class="main-btn gen-btn" onclick="generateRoutine()">Generate Routine Image</button>
 
                 <div id="routine-output">
-                    <h2 style="text-align:center; margin-bottom:10px;">Weekly Academic Routine</h2>
+                    <h2 style="text-align:center; margin-bottom:20px; color: #0b1a2a; border-bottom: 2px solid #333; padding-bottom: 10px;">Weekly Academic Routine</h2>
                     <table class="routine-table">
                         <thead>
-                            <tr><th>Day</th><th>Course Name</th><th>Time</th></tr>
+                            <tr>
+                                <th style="width: 25%;">Day</th>
+                                <th>Courses & Time Schedule</th>
+                            </tr>
                         </thead>
                         <tbody id="table-body"></tbody>
                     </table>
@@ -127,8 +123,51 @@
     </div>
 
     <script>
-        function scrollLeftBtn(id) { document.getElementById(id).scrollBy({ left: -320, behavior: 'smooth' }); }
-        function scrollRightBtn(id) { document.getElementById(id).scrollBy({ left: 320, behavior: 'smooth' }); }
+        const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+        const container = document.getElementById('day-inputs-container');
+
+        // জেনারেট ইনপুট ফিল্ডস
+        days.forEach(day => {
+            const div = document.createElement('div');
+            div.className = 'day-input-group';
+            div.innerHTML = `
+                <div class="day-header">
+                    <span class="day-label">${day}</span>
+                    <button class="add-class-btn" onclick="addNewRow('${day}')">+</button>
+                </div>
+                <div id="rows-${day}">
+                    <div class="input-row">
+                        <input type="text" class="course-${day}" placeholder="Course (e.g. CSE301)">
+                        <input type="text" class="time-${day}" placeholder="Time (e.g. 11:00 AM)">
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+        function addNewRow(day) {
+            const rowContainer = document.getElementById(`rows-${day}`);
+            const newRow = document.createElement('div');
+            newRow.className = 'input-row';
+            newRow.innerHTML = `
+                <input type="text" class="course-${day}" placeholder="Course">
+                <input type="text" class="time-${day}" placeholder="Time">
+            `;
+            rowContainer.appendChild(newRow);
+        }
+
+        // রিসাইকেল স্ক্রল লজিক
+        function scrollBtn(id, direction) {
+            const el = document.getElementById(id);
+            const scrollAmount = 320;
+            if (direction === 1) {
+                if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) el.scrollLeft = 0;
+                else el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            } else {
+                if (el.scrollLeft <= 0) el.scrollLeft = el.scrollWidth;
+                else el.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        }
 
         function toggleRoutineBox() {
             const box = document.getElementById('routine-ui');
@@ -141,19 +180,26 @@
             let hasData = false;
 
             days.forEach(day => {
-                const course = document.getElementById(`course-${day}`).value;
-                const time = document.getElementById(`time-${day}`).value;
-                if(course || time) {
-                    hasData = true;
-                    tbody.innerHTML += `<tr><td><strong>${day}</strong></td><td>${course || '-'}</td><td>${time || '-'}</td></tr>`;
+                const courses = document.getElementsByClassName(`course-${day}`);
+                const times = document.getElementsByClassName(`time-${day}`);
+                let dayContent = '';
+
+                for (let i = 0; i < courses.length; i++) {
+                    if (courses[i].value || times[i].value) {
+                        hasData = true;
+                        dayContent += `<div style="margin-bottom:5px;">• <strong>${courses[i].value || 'N/A'}</strong>: ${times[i].value || 'TBA'}</div>`;
+                    }
+                }
+
+                if (dayContent) {
+                    tbody.innerHTML += `<tr><td style="font-weight:bold; background:#f9f9f9;">${day}</td><td>${dayContent}</td></tr>`;
                 }
             });
 
-            if(!hasData) { alert("Please enter at least one class!"); return; }
+            if (!hasData) { alert("Please enter at least one class schedule!"); return; }
 
             document.getElementById('routine-output').style.display = 'block';
             document.getElementById('dl-btn').style.display = 'inline-block';
-            window.scrollTo(0, document.body.scrollHeight);
         }
 
         function downloadRoutine() {
