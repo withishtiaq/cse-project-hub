@@ -101,13 +101,21 @@
             border: 3px solid var(--accent-color);
             box-shadow: 0 0 15px var(--accent-color);
         }
+        @keyframes logoPulse {
+            0% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px var(--accent-color); }
+            100% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
+        }
+        .animate-logo {
+            animation: logoPulse 3s infinite ease-in-out;
+        }     
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="/images/Logo.png" alt="Logo" style="width: 120px; height: auto;">
+            <img src="/images/Logo.png" alt="Logo" class="animate-logo" style="width: 120px; height: auto;">
         </div>
         <h1>CSE Project Hub - Bangladesh</h1>
         <p>Complete project support for undergraduate CSE students</p>
