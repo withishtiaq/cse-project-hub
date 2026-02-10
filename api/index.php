@@ -1,5 +1,4 @@
 <?php
-// স্ট্যাটিক ফাইল (ইমেজ, সিএসএস) হ্যান্ডেল করার জন্য
 $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
