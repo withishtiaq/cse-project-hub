@@ -109,6 +109,11 @@
         .animate-logo {
             animation: logoPulse 3s infinite ease-in-out;
         }     
+        .contact-btn:hover {
+            box-shadow: 0 0 20px var(--accent-color);
+            background: #ffffff;
+            transform: scale(1.1);
+        }    
     </style>
 </head>
 <body>
