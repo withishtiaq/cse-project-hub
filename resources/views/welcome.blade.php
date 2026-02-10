@@ -28,7 +28,6 @@
             border-bottom: 2px solid var(--accent-color);
         }
 
-        .logo-container { margin-bottom: 20px; }
         .logo-container img {
             border-radius: 50%;
             border: 3px solid var(--accent-color);
@@ -41,10 +40,7 @@
             100% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
         }
 
-        header h1 { font-size: 2.5rem; color: var(--accent-color); letter-spacing: 2px; }
-        header p { font-size: 1.1rem; margin-top: 10px; opacity: 0.8; }
-
-        .container { max-width: 1100px; margin: 50px auto; padding: 20px; }
+        .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         
         .section-title {
             text-align: center;
@@ -54,89 +50,74 @@
             text-transform: uppercase;
         }
 
-        /* কার্ড হোভার ইফেক্ট */
-        .card, .scroll-card { 
-            background: var(--card-bg); 
-            border-radius: 12px; 
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        /* ক্যারোসেল কন্টেইনার */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
-        .card:hover, .scroll-card:hover { 
-            border-color: var(--accent-color); 
-            transform: translateY(-10px); 
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
-            cursor: pointer;
-        }
-
-        /* সার্ভিস গ্রিড - ৭টি কার্ডের জন্য অপ্টিমাইজড */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
-            margin-bottom: 60px;
-        }
-        
-        .card { padding: 30px; text-align: center; }
-        .card h3 { color: var(--accent-color); margin-bottom: 12px; font-size: 1.4rem; }
-        .card p { font-size: 0.95rem; color: #b0bec5; line-height: 1.6; }
-
-        /* স্ক্রলিং সিস্টেম */
         .scroll-container {
             display: flex;
             overflow-x: auto;
             gap: 20px;
             padding: 20px 5px;
             scroll-behavior: smooth;
+            scrollbar-width: none;
         }
 
-        .scroll-container::-webkit-scrollbar { height: 6px; }
-        .scroll-container::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+        .scroll-container::-webkit-scrollbar { display: none; }
 
-        .scroll-card { min-width: 320px; padding: 25px; }
-
-        .project-img {
-            width: 100%;
-            height: 160px;
-            background: #0b1a2a;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            transition: 0.4s;
+        .card, .scroll-card { 
+            min-width: 300px;
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            padding: 30px;
+            text-align: center;
         }
 
-        .scroll-card:hover .project-img { transform: scale(1.02); border-color: var(--accent-color); }
+        .card:hover, .scroll-card:hover { 
+            border-color: var(--accent-color); 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+        }
 
-        .client-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .client-avatar {
-            width: 55px;
-            height: 55px;
+        .card h3 { color: var(--accent-color); margin-bottom: 12px; }
+
+        /* নেভিগেশন অ্যারো */
+        .nav-btn {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            border: none;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 2px solid var(--accent-color);
-            object-fit: cover;
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 15px var(--accent-color);
+            transition: 0.3s;
         }
+
+        .nav-btn:hover { background: #ffffff; transform: scale(1.1); }
+        .prev-btn { left: -20px; }
+        .next-btn { right: -20px; }
+
+        /* প্রজেক্ট ইমেজ ও রিভিউ স্টাইল */
+        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
+        .client-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
         .client-name { font-weight: 600; color: var(--accent-color); }
-        .review-text { font-style: italic; font-size: 0.95rem; color: #b0bec5; line-height: 1.5; }
 
         .btn-container { text-align: center; margin-top: 50px; }
-        .contact-btn { 
-            display: inline-block; 
-            padding: 15px 40px; 
-            background: var(--accent-color); 
-            color: var(--primary-bg); 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 700; 
-            text-transform: uppercase;
-            transition: 0.3s; 
-        }
+        .contact-btn { display: inline-block; padding: 15px 40px; background: var(--accent-color); color: var(--primary-bg); text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         .contact-btn:hover { box-shadow: 0 0 20px var(--accent-color); background: #ffffff; transform: scale(1.1); }
 
-        footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; margin-top: 60px; }
+        footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
     </style>
 </head>
 <body>
@@ -151,78 +132,72 @@
 
     <div class="container">
         <h2 class="section-title">Our Services</h2>
-        <div class="grid">
-            <div class="card"><h3>Software</h3><p>Web apps, Mobile apps, and Custom Solutions.</p></div>
-            <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Embedded Systems.</p></div>
-            <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
-            <div class="card"><h3>IoT</h3><p>Smart Home and Industrial IoT Solutions.</p></div>
-            
-            <div class="card">
-                <h3>Plagiarism Checker</h3>
-                <p>Ensure your thesis or report is 100% original and academic-ready.</p>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollLeftBtn('services-scroll')">&#10094;</button>
+            <div class="scroll-container" id="services-scroll">
+                <div class="card"><h3>Software</h3><p>Web apps, Mobile apps, and Custom Solutions.</p></div>
+                <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Embedded Systems.</p></div>
+                <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
+                <div class="card"><h3>IoT</h3><p>Smart Home and Industrial IoT Solutions.</p></div>
+                <div class="card"><h3>Plagiarism Checker</h3><p>Ensure your thesis or report is 100% original.</p></div>
+                <div class="card"><h3>Question Unlock</h3><p>Unlock solutions for complex academic research.</p></div>
+                <div class="card"><h3>ToolBox Subscription</h3><p>Premium access to developer tools.</p></div>
             </div>
-            <div class="card">
-                <h3>Question Unlock</h3>
-                <p>Unlock solutions for complex research and academic questions quickly.</p>
-            </div>
-            <div class="card">
-                <h3>ToolBox Subscription</h3>
-                <p>Get premium access to essential developer tools and student resources.</p>
-            </div>
+            <button class="nav-btn next-btn" onclick="scrollRightBtn('services-scroll')">&#10095;</button>
         </div>
-        
+    </div>
+
+    <div class="container">
         <h2 class="section-title">Our Projects</h2>
-        <div class="scroll-container">
-            <div class="scroll-card">
-                <div class="project-img">🖥️</div>
-                <h3>FPGA Deepfake Detection</h3>
-                <p>Real-time deepfake detection system using FPGA and noise analysis.</p>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollLeftBtn('project-scroll')">&#10094;</button>
+            <div class="scroll-container" id="project-scroll">
+                <div class="scroll-card"><div class="project-img">🖥️</div><h3>FPGA Deepfake Detection</h3><p>Real-time system using noise analysis.</p></div>
+                <div class="scroll-card"><div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>High-accuracy security solutions.</p></div>
+                <div class="scroll-card"><div class="project-img">🌐</div><h3>Project Hub Portal</h3><p>Resource system for CSE students.</p></div>
             </div>
-            <div class="scroll-card">
-                <div class="project-img">🤖</div>
-                <h3>AI Face Recognition</h3>
-                <p>High-accuracy face recognition system for security solutions.</p>
-            </div>
-            <div class="scroll-card">
-                <div class="project-img">🌐</div>
-                <h3>Project Hub Portal</h3>
-                <p>Academic resource management system for CSE students.</p>
-            </div>
+            <button class="nav-btn next-btn" onclick="scrollRightBtn('project-scroll')">&#10095;</button>
         </div>
+    </div>
 
-        <h2 class="section-title" style="margin-top: 60px;">Client Reviews</h2>
-        <div class="scroll-container">
-            <div class="scroll-card">
-                <div class="client-info">
-                    <img src="/images/client1.png" class="client-avatar" alt="Client 1">
-                    <span class="client-name">BRACU Student</span>
-                </div>
-                <p class="review-text">"Highly professional service! The hardware implementation was flawless. Helped me a lot in my final thesis."</p>
+    <div class="container">
+        <h2 class="section-title">Client Reviews</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollLeftBtn('review-scroll')">&#10094;</button>
+            <div class="scroll-container" id="review-scroll">
+                <div class="scroll-card"><div class="client-info"><img src="/images/client1.png" class="client-avatar" alt="C1"><span class="client-name">BRACU Student</span></div><p>"Flawless hardware implementation."</p></div>
+                <div class="scroll-card"><div class="client-info"><img src="/images/client2.png" class="client-avatar" alt="C2"><span class="client-name">CSE Learner</span></div><p>"Excellent AI and thesis support."</p></div>
             </div>
-            <div class="scroll-card">
-                <div class="client-info">
-                    <img src="/images/client2.png" class="client-avatar" alt="Client 2">
-                    <span class="client-name">CSE Learner</span>
-                </div>
-                <p class="review-text">"Excellent documentation and AI support. The team is very knowledgeable about current tech trends."</p>
-            </div>
-            <div class="scroll-card">
-                <div class="client-info">
-                    <img src="/images/client1.png" class="client-avatar" alt="Client 3">
-                    <span class="client-name">Research Scholar</span>
-                </div>
-                <p class="review-text">"The FPGA implementation support was top-notch. Truly a lifesaver for complex hardware projects."</p>
-            </div>
+            <button class="nav-btn next-btn" onclick="scrollRightBtn('review-scroll')">&#10095;</button>
         </div>
+    </div>
 
-        <div class="btn-container">
-            <a href="https://www.facebook.com/profile.php?id=61585433384743" class="contact-btn" target="_blank">DM Us Now</a>
-        </div>
+    <div class="btn-container">
+        <a href="https://www.facebook.com/profile.php?id=61585433384743" class="contact-btn" target="_blank">DM Us Now</a>
     </div>
 
     <footer>
         <p>&copy; 2026 CSE Project Hub - BD. All rights reserved.</p>
     </footer>
 
+    <script>
+        function scrollLeftBtn(id) {
+            const container = document.getElementById(id);
+            if (container.scrollLeft === 0) {
+                container.scrollLeft = container.scrollWidth; // রিসাইকেল ইফেক্ট
+            } else {
+                container.scrollBy({ left: -320, behavior: 'smooth' });
+            }
+        }
+
+        function scrollRightBtn(id) {
+            const container = document.getElementById(id);
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
+                container.scrollLeft = 0; // রিসাইকেল ইফেক্ট
+            } else {
+                container.scrollBy({ left: 320, behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 </html>
