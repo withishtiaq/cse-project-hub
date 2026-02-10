@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #0b1a2a; /* ব্যানার থেকে নেওয়া ডার্ক নেভি */
-            --accent-color: #00e5ff; /* ব্যানার থেকে নেওয়া সায়ান কালার */
+            --primary-bg: #0b1a2a; 
+            --accent-color: #00e5ff; 
             --card-bg: #162a3d;
             --text-white: #ffffff;
         }
@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section with Circuit Background Vibe */
         header { 
             background: linear-gradient(135deg, #0b1a2a 0%, #162a3d 100%);
             padding: 80px 20px; 
@@ -29,24 +28,39 @@
             border-bottom: 2px solid var(--accent-color);
         }
 
-        .logo-placeholder {
-            width: 100px;
-            height: 100px;
-            background: var(--accent-color);
+        .logo-container { margin-bottom: 20px; }
+        .logo-container img {
             border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 20px var(--accent-color);
+            border: 3px solid var(--accent-color);
+            animation: logoPulse 3s infinite ease-in-out;
+        }
+
+        @keyframes logoPulse {
+            0% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px var(--accent-color); }
+            100% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
         }
 
         header h1 { font-size: 2.5rem; color: var(--accent-color); letter-spacing: 2px; }
         header p { font-size: 1.1rem; margin-top: 10px; opacity: 0.8; }
 
-        /* Project Cards */
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* সার্ভিস গ্রিড (আগের মতো) */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 60px;
+        }
         
         .card { 
             background: var(--card-bg); 
@@ -56,17 +70,63 @@
             border: 1px solid rgba(0, 229, 255, 0.1);
             transition: 0.4s; 
         }
+        .card:hover { border-color: var(--accent-color); transform: translateY(-10px); }
+        .card h3 { color: var(--accent-color); margin-bottom: 12px; }
 
-        .card:hover { 
-            border-color: var(--accent-color);
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+        /* অনুভূমিক স্ক্রলিং সিস্টেম */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 5px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .card h3 { color: var(--accent-color); margin-bottom: 12px; font-size: 1.3rem; }
-        .card p { font-size: 0.9rem; color: #b0bec5; line-height: 1.6; }
+        /* স্ক্রলবার স্টাইল (ঐচ্ছিক) */
+        .scroll-container::-webkit-scrollbar { height: 6px; }
+        .scroll-container::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
 
-        /* Action Button */
+        .scroll-card {
+            min-width: 320px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            transition: 0.3s;
+        }
+        .scroll-card:hover { border-color: var(--accent-color); }
+
+        .project-img {
+            width: 100%;
+            height: 160px;
+            background: #0b1a2a;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        /* রিভিউ সেকশন স্টাইল */
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .client-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            object-fit: cover;
+        }
+        .client-name { font-weight: 600; color: var(--accent-color); }
+        .review-text { font-style: italic; font-size: 0.95rem; color: #b0bec5; line-height: 1.5; }
+
         .btn-container { text-align: center; margin-top: 50px; }
         .contact-btn { 
             display: inline-block; 
@@ -77,179 +137,76 @@
             border-radius: 50px; 
             font-weight: 700; 
             text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4);
             transition: 0.3s; 
         }
-        .contact-btn:hover { 
-            background: #ffffff;
-            transform: scale(1.05);
-        }
+        .contact-btn:hover { box-shadow: 0 0 20px var(--accent-color); background: #ffffff; transform: scale(1.1); }
 
-        footer { 
-            text-align: center; 
-            padding: 40px; 
-            background: #07121d; 
-            font-size: 0.8rem; 
-            color: #546e7a;
-            margin-top: 60px;
-        }
-        .logo-container {
-            margin-bottom: 20px;
-        }
-        .logo-container img {
-            border-radius: 50%;
-            border: 3px solid var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-color);
-        }
-        @keyframes logoPulse {
-            0% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
-            50% { transform: scale(1.05); box-shadow: 0 0 30px var(--accent-color); }
-            100% { transform: scale(1); box-shadow: 0 0 15px var(--accent-color); }
-        }
-        .animate-logo {
-            animation: logoPulse 3s infinite ease-in-out;
-        }     
-        .contact-btn:hover {
-            box-shadow: 0 0 20px var(--accent-color);
-            background: #ffffff;
-            transform: scale(1.1);
-        }    
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-        .project-img {
-            width: 100%;
-            height: 180px;
-            background: #0b1a2a;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(0, 229, 255, 0.2);
-        }
-        .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--accent-color);
-            padding: 20px;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        .client-name {
-            display: block;
-            margin-top: 10px;
-            font-weight: 600;
-            color: var(--accent-color);
-            font-style: normal;
-        }     
-        .scroll-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px 0;
-            scrollbar-width: none; /* Firefox এর জন্য স্ক্রলবার হাইড */
-            -ms-overflow-style: none;  /* IE/Edge এর জন্য */
-        }
-        .scroll-container::-webkit-scrollbar {
-            display: none; /* Chrome/Safari এর জন্য স্ক্রলবার হাইড */
-        }
-        .scroll-card {
-            min-width: 300px; /* কার্ডের চওড়া নির্ধারণ */
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            transition: 0.3s;
-        }
-        .client-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 2px solid var(--accent-color);
-            object-fit: cover;
-        }    
+        footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="/images/Logo.png" alt="Logo" class="animate-logo" style="width: 120px; height: auto;">
+            <img src="/images/Logo.png" alt="Logo" style="width: 120px; height: auto;">
         </div>
         <h1>CSE Project Hub - Bangladesh</h1>
         <p>Complete project support for undergraduate CSE students</p>
     </header>
 
     <div class="container">
+        <h2 class="section-title">Our Services</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Software</h3>
-                <p>Web apps, Mobile apps, and Custom Software Solutions.</p>
-            </div>
-            <div class="card">
-                <h3>Hardware</h3>
-                <p>Arduino, Raspberry Pi, Robotics, and Embedded Systems.</p>
-            </div>
-            <div class="card">
-                <h3>AI & ML</h3>
-                <p>Deep Learning, Computer Vision, and Predictive Analysis.</p>
-            </div>
-            <div class="card">
-                <h3>IoT</h3>
-                <p>Smart Home Automation and Industrial IoT Solutions.</p>
-            </div>
+            <div class="card"><h3>Software</h3><p>Web apps, Mobile apps, and Custom Solutions.</p></div>
+            <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Embedded Systems.</p></div>
+            <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
+            <div class="card"><h3>IoT</h3><p>Smart Home and Industrial IoT Solutions.</p></div>
         </div>
         
-         
-        <div class="container">
-            <h2 class="section-title">Our Featured Projects</h2>
-            <div class="scroll-container">
-                <div class="scroll-card">
-                    <div class="project-img">🖥️</div>
-                    <h3>FPGA Deepfake Detection</h3>
-                    <p>Real-time deepfake detection system using FPGA.</p>
-                </div>
-                <div class="scroll-card">
-                    <div class="project-img">🌐</div>
-                    <h3>Project Hub Portal</h3>
-                    <p>A full-stack web application for CSE academic support.</p>
-                </div>
-                <div class="scroll-card">
-                    <div class="project-img">🌐</div>
-                    <h3>Project Hub Portal</h3>
-                    <p>A full-stack web application for CSE academic support.</p>
-                </div>
+        <h2 class="section-title">Our Projects</h2>
+        <div class="scroll-container">
+            <div class="scroll-card">
+                <div class="project-img">🖥️</div>
+                <h3>FPGA Deepfake Detection</h3>
+                <p>Real-time deepfake detection system using FPGA and noise analysis.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="project-img">🤖</div>
+                <h3>AI Face Recognition</h3>
+                <p>High-accuracy face recognition system for security solutions.</p>
+            </div>
+            <div class="scroll-card">
+                <div class="project-img">🌐</div>
+                <h3>Project Hub Portal</h3>
+                <p>Academic resource management system for CSE students.</p>
             </div>
         </div>
 
-        <div class="container">
-            <h2 class="section-title">Client Reviews</h2>
-            <div class="scroll-container">
-                <div class="scroll-card">
-                    <img src="/images/client1.png" class="client-avatar" alt="Client">
-                    <p>"Highly professional service! The hardware implementation was flawless."</p>
-                    <span class="client-name">- BRACU Student</span>
+        <h2 class="section-title" style="margin-top: 60px;">Client Reviews</h2>
+        <div class="scroll-container">
+            <div class="scroll-card">
+                <div class="client-info">
+                    <img src="/images/client1.png" class="client-avatar" alt="Client 1">
+                    <span class="client-name">BRACU Student</span>
                 </div>
-                <div class="scroll-card">
-                    <img src="/images/client2.png" class="client-avatar" alt="Client">
-                    <p>"Excellent documentation and AI support. Helped me a lot with my research."</p>
-                    <span class="client-name">- Research Scholar</span>
+                <p class="review-text">"Highly professional service! The hardware implementation was flawless. Helped me a lot in my final thesis."</p>
+            </div>
+            <div class="scroll-card">
+                <div class="client-info">
+                    <img src="/images/client2.png" class="client-avatar" alt="Client 2">
+                    <span class="client-name">CSE Learner</span>
                 </div>
-                <div class="scroll-card">
-                    <img src="/images/client2.png" class="client-avatar" alt="Client">
-                    <p>"Excellent documentation and AI support. Helped me a lot with my research."</p>
-                    <span class="client-name">- Research Scholar</span>
+                <p class="review-text">"Excellent documentation and AI support. The team is very knowledgeable about current tech trends."</p>
+            </div>
+            <div class="scroll-card">
+                <div class="client-info">
+                    <img src="/images/client1.png" class="client-avatar" alt="Client 3">
+                    <span class="client-name">Research Scholar</span>
                 </div>
+                <p class="review-text">"The FPGA implementation support was top-notch. Truly a lifesaver for complex hardware projects."</p>
             </div>
         </div>
 
-
-        
         <div class="btn-container">
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="contact-btn" target="_blank">DM Us Now</a>
         </div>
