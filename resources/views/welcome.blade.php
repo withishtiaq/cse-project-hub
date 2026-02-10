@@ -207,6 +207,7 @@
         
          
         <div class="container">
+            <div class="grid">
             <h2 class="section-title">Our Featured Projects</h2>
             <div class="scroll-container">
                 <div class="scroll-card">
@@ -225,9 +226,11 @@
                     <p>A full-stack web application for CSE academic support.</p>
                 </div>
             </div>
+            </div>
         </div>
 
         <div class="container">
+            <div class="grid">
             <h2 class="section-title">Client Reviews</h2>
             <div class="scroll-container">
                 <div class="scroll-card">
@@ -245,6 +248,7 @@
                     <p>"Excellent documentation and AI support. Helped me a lot with my research."</p>
                     <span class="client-name">- Research Scholar</span>
                 </div>
+            </div>
             </div>
         </div>
 
