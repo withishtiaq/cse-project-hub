@@ -20,7 +20,7 @@
 
         header { 
             background: linear-gradient(135deg, #0b1a2a 0%, #162a3d 100%);
-            padding: 80px 20px; text-align: center; border-bottom: 2px solid var(--accent-color);
+            padding: 60px 20px; text-align: center; border-bottom: 2px solid var(--accent-color);
         }
 
         .logo-container img {
@@ -38,7 +38,7 @@
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
-        /* --- Chat Animation (Tiro Bangla) --- */
+        /* --- Chat Animation --- */
         .chat-section { margin-bottom: 60px; display: flex; flex-direction: column; gap: 30px; }
         .chat-row { display: flex; align-items: center; gap: 15px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
         .owner-row { flex-direction: row-reverse; animation-delay: 0.5s; }
@@ -49,36 +49,33 @@
         .client-bubble { background: var(--card-bg); color: white; border: 1px solid rgba(0, 229, 255, 0.3); border-bottom-left-radius: 2px; }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Snackbar Style --- */
+        /* --- Snackbar & Modal Style --- */
         #snackbar {
             visibility: hidden; min-width: 320px; background-color: var(--card-bg); color: #fff;
             border-radius: 12px; padding: 25px; position: fixed; z-index: 1000; left: 50%; bottom: 30px;
             transform: translateX(-50%); border: 2px solid var(--accent-color);
             box-shadow: 0 0 30px rgba(0, 229, 255, 0.4); font-family: 'Tiro Bangla', serif;
-            transition: visibility 0s, opacity 0.4s ease-in-out; opacity: 0;
+            transition: visibility 0s, opacity 0.4s; opacity: 0;
         }
         #snackbar.show { visibility: visible; opacity: 1; }
-        .close-snackbar { position: absolute; top: 10px; right: 12px; cursor: pointer; color: var(--accent-color); font-weight: bold; font-size: 1.2rem; }
 
-        /* --- Project Modal Style (নতুন) --- */
         .modal {
             display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.9); overflow: auto;
         }
         .modal-content {
-            background-color: var(--card-bg); margin: 5% auto; padding: 30px;
-            border: 2px solid var(--accent-color); width: 90%; max-width: 600px;
-            border-radius: 15px; position: relative; text-align: center;
+            background-color: var(--card-bg); margin: 5% auto; padding: 35px;
+            border: 2px solid var(--accent-color); width: 90%; max-width: 550px;
+            border-radius: 20px; position: relative; text-align: center;
             box-shadow: 0 0 40px var(--accent-color); animation: modalZoom 0.4s;
         }
         @keyframes modalZoom { from {transform: scale(0.7); opacity: 0;} to {transform: scale(1); opacity: 1;} }
-        .close-modal { position: absolute; top: 15px; right: 20px; color: var(--accent-color); font-size: 2rem; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .close-modal:hover { color: white; transform: rotate(90deg); }
-        .modal-img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; border: 1px solid rgba(0, 229, 255, 0.2); }
-        .modal-title { color: var(--accent-color); margin-bottom: 15px; font-size: 1.8rem; }
-        .modal-desc { font-family: 'Tiro Bangla', serif; font-size: 1.1rem; line-height: 1.6; color: #b0bec5; }
+        .close-modal { position: absolute; top: 15px; right: 20px; color: var(--accent-color); font-size: 2rem; cursor: pointer; transition: 0.3s; }
+        .modal-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid var(--accent-color); box-shadow: 0 0 20px var(--accent-color); }
+        .modal-title { color: var(--accent-color); margin-bottom: 15px; font-size: 1.6rem; }
+        .modal-desc { font-family: 'Tiro Bangla', serif; font-size: 1.15rem; line-height: 1.6; color: #ffffff; font-style: italic; }
 
-        /* --- Carousel & Scroll Systems --- */
+        /* --- Carousel & Scroll --- */
         .carousel-wrapper { position: relative; display: flex; align-items: center; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
@@ -87,14 +84,14 @@
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); padding: 30px; text-align: center;
         }
         .card:hover, .scroll-card:hover { border-color: var(--accent-color); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2); cursor: pointer; }
-        .nav-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; font-weight: bold; box-shadow: 0 0 15px var(--accent-color); }
+        .nav-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; font-weight: bold; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
         .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
         .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
 
         /* --- Routine Maker & Footer --- */
-        .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
+        .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; }
         .add-class-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-weight: bold; }
         #routine-output { margin-top: 30px; background: white; color: black; padding: 30px; border-radius: 10px; display: none; border: 5px solid var(--primary-bg); font-family: 'Tiro Bangla', serif; }
         .routine-table { width: 100%; border-collapse: collapse; }
@@ -132,12 +129,12 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="s-scroll">
-                <div class="card" onclick="showSnackbar('আপনার প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা কাস্টম সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
-                <div class="card" onclick="showSnackbar('আর্ডুইনো থেকে রোবোটিক্স—যেকোনো হার্ডওয়্যার প্রোজেক্টে আমরা আপনাকে পূর্ণ সহায়তা দিই।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
-                <div class="card" onclick="showSnackbar('ডিপ লার্নিং ও কম্পিউটার ভিশনের আধুনিক প্রযুক্তি ব্যবহার করে আমরা স্মার্ট এআই প্রোজেক্ট তৈরি করি।')"><h3>AI & ML</h3><p>AI Solutions.</p></div>
-                <div class="card" onclick="showSnackbar('আপনার থিসিস রিপোর্টের ১০০% অরিজিনালিটি এবং টার্নিটিন রিপোর্ট পেতে সাহায্য করি।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
-                <div class="card" onclick="showSnackbar('যেকোনো একাডেমিক রিসার্চের প্রশ্নের সমাধান আমাদের মাধ্যমে সংগ্রহ করুন।')"><h3>Question Unlock</h3><p>Research Support.</p></div>
-                <div class="card" onclick="showSnackbar('ডেভেলপার এবং রিসার্চারদের জন্য প্রিমিয়াম টুলসের অ্যাক্সেস।')"><h3>ToolBox</h3><p>Premium Resources.</p></div>
+                <div class="card" onclick="showSnackbar('সিএসই প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা কাস্টম সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
+                <div class="card" onclick="showSnackbar('আর্ডুইনো থেকে রোবোটিক্স—যেকোনো হার্ডওয়্যার প্রোজেক্টে আমরা পূর্ণ সহায়তা দিই।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
+                <div class="card" onclick="showSnackbar('আধুনিক প্রযুক্তি ব্যবহার করে আমরা স্মার্ট এআই প্রোজেক্ট তৈরি করি।')"><h3>AI & ML</h3><p>AI Solutions.</p></div>
+                <div class="card" onclick="showSnackbar('আপনার থিসিস রিপোর্টের ১০০% অরিজিনালিটি নিশ্চিত করুন।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
+                <div class="card" onclick="showSnackbar('একাডেমিক রিসার্চের প্রশ্নের দ্রুত সমাধান আমাদের মাধ্যমে সংগ্রহ করুন।')"><h3>Question Unlock</h3><p>Research Support.</p></div>
+                <div class="card" onclick="showSnackbar('ডেভেলপার এবং রিসার্চারদের জন্য প্রিমিয়াম রিসোর্স এর কালেকশন।')"><h3>ToolBox</h3><p>Premium Resources.</p></div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
@@ -146,14 +143,11 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
-                <div class="scroll-card" onclick="openProjectModal('FPGA Deepfake Detection', '/images/Logo.png', 'এটি একটি রিয়েল-টাইম ডিপফেক ডিটেকশন সিস্টেম যা FPGA ব্যবহার করে স্প্যাশিও-টেম্পোরাল নয়েজ অ্যানালাইসিস করে। এটি আন্ডারগ্রাজুয়েট থিসিস প্রোজেক্ট হিসেবে অত্যন্ত শক্তিশালী।')">
-                    <div class="project-img">🖥️</div><h3>FPGA Deepfake Detection</h3><p>Real-time system using noise analysis.</p>
+                <div class="scroll-card" onclick="openModal('FPGA Deepfake Detection', '/images/Logo.png', 'এটি একটি রিয়েল-টাইম ডিপফেক ডিটেকশন সিস্টেম যা FPGA ব্যবহার করে স্প্যাশিও-টেম্পোরাল নয়েজ অ্যানালাইসিস করে।', false)">
+                    <div class="project-img">🖥️</div><h3>FPGA Deepfake Detection</h3><p>Real-time noise analysis.</p>
                 </div>
-                <div class="scroll-card" onclick="openProjectModal('AI Face Recognition', '/images/Logo.png', 'উন্নত মানের ফেস রিকগনিশন সিস্টেম যা অফিস বা সিকিউরিটি সার্ভিসে ব্যবহার করা সম্ভব। এটি হাই একুরেসি নিশ্চিত করে।')">
+                <div class="scroll-card" onclick="openModal('AI Face Recognition', '/images/Logo.png', 'উন্নত মানের ফেস রিকগনিশন সিস্টেম যা হাই একুরেসি নিশ্চিত করে।', false)">
                     <div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>Security solutions.</p>
-                </div>
-                <div class="scroll-card" onclick="openProjectModal('Project Hub Portal', '/images/Logo.png', 'সিএসই স্টুডেন্টদের একাডেমিক রিসোর্স ম্যানেজ করার জন্য একটি পূর্ণাঙ্গ ওয়েব পোর্টাল। যেখানে সব ধরণের প্রোজেক্ট গাইড পাওয়া যাবে।')">
-                    <div class="project-img">🌐</div><h3>Project Hub Portal</h3><p>Resource management.</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
@@ -163,8 +157,20 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="r-scroll">
-                <div class="scroll-card"><div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client1.png" class="client-avatar" alt="C1"><span style="color:var(--accent-color);font-weight:600">BRACU Student</span></div><p>"Amazing hardware support!"</p></div>
-                <div class="scroll-card"><div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client2.png" class="client-avatar" alt="C2"><span style="color:var(--accent-color);font-weight:600">CSE Learner</span></div><p>"Best thesis guide."</p></div>
+                <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! বিশেষ করে হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত। আমার থিসিসে তাঁরা অনেক বড় ভূমিকা রেখেছেন।', true)">
+                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px">
+                        <img src="/images/client1.png" class="client-avatar" alt="C1">
+                        <span style="color:var(--accent-color);font-weight:600">BRACU Student</span>
+                    </div>
+                    <p>"Amazing hardware support!"</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'সিএসই স্টুডেন্টদের জন্য এটি একটি আশীর্বাদ। কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত। আমি খুবই সন্তুষ্ট।', true)">
+                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px">
+                        <img src="/images/client2.png" class="client-avatar" alt="C2">
+                        <span style="color:var(--accent-color);font-weight:600">CSE Learner</span>
+                    </div>
+                    <p>"Best thesis guide."</p>
+                </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('r-scroll', 1)">&#10095;</button>
         </div>
@@ -178,9 +184,9 @@
                     <h2 style="text-align:center;margin-bottom:20px;border-bottom: 2px solid #333;">Academic Routine</h2>
                     <table class="routine-table"><tbody id="table-body"></tbody></table>
                     <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-top:20px;">
-                        <div style="display:flex; align-items:center; gap:10px; font-weight:600; font-size:12px;">
+                        <div style="display:flex; align-items:center; gap:10px;">
                             <img src="/images/Logo.png" style="width:40px; border-radius:50%;">
-                            <span>Made by CSE Project Hub BD</span>
+                            <span style="font-weight:600; font-size:12px;">Made by CSE Project Hub BD</span>
                         </div>
                         <div id="qrcode-box"></div>
                     </div>
@@ -191,10 +197,10 @@
         </div>
     </div>
 
-    <div id="projectModal" class="modal">
+    <div id="universalModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeProjectModal()">&times;</span>
-            <img id="modalImg" src="" class="modal-img" alt="Project Image">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" class="modal-img" alt="Image">
             <h2 id="modalTitle" class="modal-title"></h2>
             <p id="modalDesc" class="modal-desc"></p>
         </div>
@@ -206,35 +212,46 @@
 
     <script>
         // Modal ফাংশন
-        function openProjectModal(title, img, desc) {
+        function openModal(title, img, desc, isReview) {
             document.getElementById("modalTitle").innerText = title;
             document.getElementById("modalImg").src = img;
             document.getElementById("modalDesc").innerText = desc;
-            document.getElementById("projectModal").style.display = "block";
+            
+            // রিভিউ হলে ছবি গোল থাকবে, প্রজেক্ট হলে চারকোনা
+            const modalImg = document.getElementById("modalImg");
+            if(isReview) {
+                modalImg.style.borderRadius = "50%";
+                modalImg.style.width = "150px";
+                modalImg.style.height = "150px";
+            } else {
+                modalImg.style.borderRadius = "10px";
+                modalImg.style.width = "100%";
+                modalImg.style.height = "250px";
+            }
+            
+            document.getElementById("universalModal").style.display = "block";
         }
-        function closeProjectModal() { document.getElementById("projectModal").style.display = "none"; }
-        window.onclick = function(event) { if (event.target == document.getElementById("projectModal")) closeProjectModal(); }
+        function closeModal() { document.getElementById("universalModal").style.display = "none"; }
+        window.onclick = function(e) { if (e.target == document.getElementById("universalModal")) closeModal(); }
 
-        // Snackbar ফাংশন
-        function showSnackbar(text) { document.getElementById("snackbar-text").innerText = text; document.getElementById("snackbar").className = "show"; }
+        function showSnackbar(t) { document.getElementById("snackbar-text").innerText = t; document.getElementById("snackbar").className = "show"; }
         function hideSnackbar() { document.getElementById("snackbar").className = ""; }
 
-        // রিসাইকেল স্ক্রল
         function scrollBtn(id, dir) {
             const el = document.getElementById(id);
             if (dir === 1) { if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) el.scrollLeft = 0; else el.scrollBy({ left: 320, behavior: 'smooth' }); }
             else { if (el.scrollLeft <= 0) el.scrollLeft = el.scrollWidth; else el.scrollBy({ left: -320, behavior: 'smooth' }); }
         }
 
-        // রুটিন মেকার লজিক
+        // রুটিন মেকার
         const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-        const container = document.getElementById('day-inputs-container');
+        const cont = document.getElementById('day-inputs-container');
         days.forEach(day => {
             const div = document.createElement('div');
             div.className = 'day-input-group';
             div.innerHTML = `<div class="day-header"><span style="color:var(--accent-color);font-weight:600">${day}</span><button class="add-class-btn" onclick="addNewRow('${day}')">+</button></div>
                 <div id="rows-${day}"><div class="input-row"><input type="text" class="course-${day}" placeholder="Course"><input type="text" class="time-${day}" placeholder="Time"></div></div>`;
-            container.appendChild(div);
+            cont.appendChild(div);
         });
         function addNewRow(day) {
             const row = document.createElement('div'); row.className = 'input-row';
