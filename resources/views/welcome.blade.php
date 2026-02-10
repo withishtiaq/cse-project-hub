@@ -114,6 +114,38 @@
             background: #ffffff;
             transform: scale(1.1);
         }    
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .project-img {
+            width: 100%;
+            height: 180px;
+            background: #0b1a2a;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .client-name {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--accent-color);
+            font-style: normal;
+        }     
     </style>
 </head>
 <body>
@@ -145,7 +177,38 @@
                 <p>Smart Home Automation and Industrial IoT Solutions.</p>
             </div>
         </div>
+        
+         
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="project-img">🚀</div>
+                    <h3>FPGA Deepfake Detector</h3>
+                    <p>FPGA-Based Real-Time Deepfake Detection System.</p>
+                </div>
+                <div class="card">
+                    <div class="project-img">🤖</div>
+                    <h3>AI Research Assistant</h3>
+                    <p>Automated tool for CSE academic research and noise analysis.</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="container">
+            <h2 class="section-title">Client Reviews</h2>
+            <div class="review-card">
+                "The project support I received for my final year thesis was exceptional. Highly recommended for CSE students!"
+                <span class="client-name">- BRACU Student</span>
+            </div>
+            <div class="review-card">
+                "Great quality hardware implementation and very clear documentation."
+                <span class="client-name">- Research Scholar</span>
+            </div>
+        </div>
+
+
+        
         <div class="btn-container">
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="contact-btn" target="_blank">DM Us Now</a>
         </div>
