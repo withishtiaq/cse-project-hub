@@ -234,7 +234,7 @@
             <button class="main-btn routine-trigger" onclick="toggleRoutineBox()">📅 Academic Routine Maker</button>
             <div class="routine-box" id="routine-ui">
                 <div id="day-inputs-container"></div>
-                <button class="main-btn gen-btn" onclick="generateRoutine()">Generate Branded Routine</button>
+                <button class="main-btn gen-btn" onclick="generateRoutine()">Generate Academic Routine</button>
                 <div id="routine-output">
                     <div class="watermark">CSE PROJECT HUB</div>
                     <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0b1a2a;padding-bottom:15px;margin-bottom:20px;">
@@ -247,7 +247,7 @@
                         <div style="text-align:center;border-top:2px solid #0b1a2a;min-width:140px;font-size:13px;font-weight:600;">Authorized by Agency</div>
                     </div>
                 </div>
-                <button id="dl-btn" class="main-btn dl-main-btn" style="display:none;" onclick="downloadRoutine()">📥 Download Branded Image</button>
+                <button id="dl-btn" class="main-btn dl-main-btn" style="display:none;" onclick="downloadRoutine()">📥 Download Academic Routin</button>
             </div>
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="main-btn contact-btn" target="_blank">DM Us Now</a>
         </div>
