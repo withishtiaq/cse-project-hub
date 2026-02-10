@@ -23,7 +23,6 @@
             padding: 80px 20px; text-align: center; border-bottom: 2px solid var(--accent-color);
         }
 
-        /* লোগো অ্যানিমেশন */
         .logo-container img {
             border-radius: 50%;
             border: 3px solid var(--accent-color);
@@ -39,63 +38,108 @@
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
-        /* ক্যারোসেল ও কার্ড */
+        .carousel-wrapper { position: relative; display: flex; align-items: center; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
 
+        /* কার্ড হোভার ইফেক্ট */
         .card, .scroll-card { 
-            min-width: 300px; background: var(--card-bg); border-radius: 12px; 
-            border: 1px solid rgba(0, 229, 255, 0.1); padding: 30px; text-align: center;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            min-width: 300px;
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            padding: 30px;
+            text-align: center;
         }
+
         .card:hover, .scroll-card:hover { 
-            border-color: var(--accent-color); transform: translateY(-10px); 
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2); cursor: pointer;
+            border-color: var(--accent-color); 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+            cursor: pointer;
         }
 
-        /* অ্যানিমেটেড বাটন হোভার */
-        .main-btn, .nav-btn, .add-class-btn { transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .main-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-color); }
-        .main-btn:active { transform: scale(0.95); }
-
-        .nav-btn { background: var(--accent-color); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; font-weight: bold; box-shadow: 0 0 15px var(--accent-color); }
+        .nav-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; font-weight: bold; box-shadow: 0 0 15px var(--accent-color); transition: 0.3s; }
+        .nav-btn:hover { transform: scale(1.2); background: white; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
-        /* Routine Maker */
-        .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; }
+        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
+        .client-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
+
+        /* Routine Maker Styling */
+        .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
-        .add-class-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-weight: bold; }
-        
+        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .add-class-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .add-class-btn:hover { transform: rotate(90deg) scale(1.2); }
         .input-row { display: flex; gap: 10px; margin-bottom: 8px; }
         .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; }
 
-        /* রুটিন আউটপুট ডিজাইন */
-        #routine-output { 
-            margin-top: 30px; background: white; color: black; padding: 40px; border-radius: 10px; display: none; 
-            position: relative; border: 5px solid #0b1a2a;
-        }
-        .routine-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        /* Routine Output Table with Branding */
+        #routine-output { margin-top: 30px; background: white; color: black; padding: 30px; border-radius: 10px; display: none; border: 5px solid var(--primary-bg); }
+        .routine-table { width: 100%; border-collapse: collapse; }
         .routine-table th, .routine-table td { border: 1px solid #333; padding: 12px; text-align: left; }
+        .routine-branding { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; border-top: 2px solid #ddd; padding-top: 15px; }
+        .brand-text { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
+        #qrcode { background: white; padding: 5px; }
 
-        /* রুটিন ব্র্যান্ডিং ও QR */
-        .routine-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; border-top: 2px solid #eee; padding-top: 15px; }
-        .footer-brand { display: flex; align-items: center; gap: 10px; }
-        .small-logo { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #0b1a2a; }
-        #qrcode { padding: 5px; background: white; }
-
+        /* Animated Buttons */
         .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .main-btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; cursor: pointer; border: none; }
+        .main-btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.4s; cursor: pointer; border: none; }
         .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
+        .routine-trigger:hover { background: var(--accent-color); color: var(--primary-bg); box-shadow: 0 0 20px var(--accent-color); transform: scale(1.05); }
         .contact-btn { background: var(--accent-color); color: var(--primary-bg); text-decoration: none; }
+        .contact-btn:hover { box-shadow: 0 0 25px var(--accent-color); transform: scale(1.1); background: white; }
+
+        footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container"><img src="/images/Logo.png" alt="Logo" style="width: 120px;"></div>
         <h1>CSE Project Hub - Bangladesh</h1>
+        <p>Complete project support for undergraduate CSE students</p>
     </header>
 
     <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
+            <div class="scroll-container" id="s-scroll">
+                <div class="card"><h3>Software</h3><p>Web apps, Mobile apps, and Custom Solutions.</p></div>
+                <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Systems.</p></div>
+                <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
+                <div class="card"><h3>IoT</h3><p>Smart Home and Industrial IoT.</p></div>
+                <div class="card"><h3>Plagiarism</h3><p>Report Checking Services.</p></div>
+                <div class="card"><h3>Question Unlock</h3><p>Academic Research Support.</p></div>
+                <div class="card"><h3>ToolBox</h3><p>Premium Developer Resources.</p></div>
+            </div>
+            <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
+        </div>
+
+        <h2 class="section-title">Our Projects</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
+            <div class="scroll-container" id="p-scroll">
+                <div class="scroll-card"><div class="project-img">🖥️</div><h3>FPGA Deepfake Detection</h3><p>Real-time system using noise analysis.</p></div>
+                <div class="scroll-card"><div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>High-accuracy security solutions.</p></div>
+                <div class="scroll-card"><div class="project-img">🌐</div><h3>Project Hub Portal</h3><p>Academic resource system.</p></div>
+            </div>
+            <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
+        </div>
+
+        <h2 class="section-title">Client Reviews</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
+            <div class="scroll-container" id="r-scroll">
+                <div class="scroll-card"><div class="client-info"><img src="/images/client1.png" class="client-avatar" alt="C1"><span style="color:var(--accent-color);font-weight:600">BRACU Student</span></div><p>"Amazing hardware support!"</p></div>
+                <div class="scroll-card"><div class="client-info"><img src="/images/client2.png" class="client-avatar" alt="C2"><span style="color:var(--accent-color);font-weight:600">CSE Learner</span></div><p>"Best thesis guide."</p></div>
+            </div>
+            <button class="nav-btn next-btn" onclick="scrollBtn('r-scroll', 1)">&#10095;</button>
+        </div>
+
         <div class="btn-container">
             <button class="main-btn routine-trigger" onclick="toggleRoutineBox()">📅 Academic Routine Maker</button>
             <div class="routine-box" id="routine-ui">
@@ -103,23 +147,23 @@
                 <button class="main-btn" style="background:#4CAF50;color:white;margin-top:20px;" onclick="generateRoutine()">Generate Routine</button>
                 
                 <div id="routine-output">
-                    <h2 style="text-align:center;margin-bottom:20px;">Academic Routine</h2>
+                    <h2 style="text-align:center;margin-bottom:20px;border-bottom: 2px solid #333;">Academic Routine</h2>
                     <table class="routine-table"><tbody id="table-body"></tbody></table>
-                    
-                    <div class="routine-footer">
-                        <div class="footer-brand">
-                            <img src="/images/Logo.png" class="small-logo" alt="Logo">
-                            <span style="font-size: 14px; font-weight: 600;">Made by CSE Project Hub BD</span>
+                    <div class="routine-branding">
+                        <div class="brand-text">
+                            <img src="/images/Logo.png" style="width:40px;height:40px;border-radius:50%;" alt="Logo">
+                            <span>Made by CSE Project Hub BD</span>
                         </div>
                         <div id="qrcode"></div>
                     </div>
                 </div>
-                
                 <button id="dl-btn" class="main-btn" style="background:#ff9100;color:white;margin-top:15px;display:none;" onclick="downloadRoutine()">📥 Download Image</button>
             </div>
+
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="main-btn contact-btn" target="_blank">DM Us Now</a>
         </div>
     </div>
+    <footer><p>&copy; 2026 CSE Project Hub - BD. All rights reserved.</p></footer>
 
     <script>
         const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -139,10 +183,16 @@
             document.getElementById(`rows-${day}`).appendChild(row);
         }
 
+        function scrollBtn(id, dir) {
+            const el = document.getElementById(id);
+            if (dir === 1) { if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) el.scrollLeft = 0; else el.scrollBy({ left: 320, behavior: 'smooth' }); }
+            else { if (el.scrollLeft <= 0) el.scrollLeft = el.scrollWidth; else el.scrollBy({ left: -320, behavior: 'smooth' }); }
+        }
+
         function toggleRoutineBox() { const b = document.getElementById('routine-ui'); b.style.display = b.style.display === 'block' ? 'none' : 'block'; }
 
         function generateRoutine() {
-            const tbody = document.getElementById('table-body'); tbody.innerHTML = '<tr><th>Day</th><th>Schedule</th></tr>';
+            const tbody = document.getElementById('table-body'); tbody.innerHTML = '<tr><th style="background:#eee">Day</th><th style="background:#eee">Schedule</th></tr>';
             let hasData = false;
             days.forEach(day => {
                 const courses = document.getElementsByClassName(`course-${day}`), times = document.getElementsByClassName(`time-${day}`);
@@ -151,16 +201,10 @@
                 if (content) tbody.innerHTML += `<tr><td><strong>${day}</strong></td><td>${content}</td></tr>`;
             });
 
-            if (!hasData) return alert("Enter schedule!");
+            if (!hasData) return alert("Please enter your schedule!");
 
-            // QR Code জেনারেট করা
             document.getElementById("qrcode").innerHTML = "";
-            new QRCode(document.getElementById("qrcode"), {
-                text: window.location.href, // আপনার সাইটের লিঙ্ক
-                width: 60,
-                height: 60
-            });
-
+            new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 60, height: 60 });
             document.getElementById('routine-output').style.display = 'block';
             document.getElementById('dl-btn').style.display = 'inline-block';
         }
