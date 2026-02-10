@@ -102,7 +102,7 @@
         <h1>CSE Project Hub - Bangladesh</h1>
         <p>Complete project support for undergraduate CSE students</p>
     </header>
-
+   
     <div class="container">
         <h2 class="section-title">Our Services</h2>
         <div class="carousel-wrapper">
@@ -118,7 +118,8 @@
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
-
+        <br><br>
+        
         <h2 class="section-title">Our Projects</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
@@ -129,7 +130,8 @@
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
-
+        <br><br>
+        
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
