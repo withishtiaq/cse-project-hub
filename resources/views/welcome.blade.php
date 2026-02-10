@@ -38,37 +38,38 @@
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
+        /* --- Chat Showcase Animation --- */
+        .chat-section { margin-bottom: 60px; display: flex; flex-direction: column; gap: 30px; }
+        .chat-row { display: flex; align-items: center; gap: 15px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+        .owner-row { flex-direction: row-reverse; animation-delay: 0.5s; }
+        .client-row { animation-delay: 1.5s; }
+        .chat-img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 15px var(--accent-color); }
+        .chat-bubble { padding: 15px 20px; border-radius: 20px; max-width: 70%; line-height: 1.5; font-size: 0.95rem; }
+        .owner-bubble { background: var(--accent-color); color: var(--primary-bg); font-weight: 600; border-bottom-right-radius: 2px; }
+        .client-bubble { background: var(--card-bg); color: white; border: 1px solid rgba(0, 229, 255, 0.3); border-bottom-left-radius: 2px; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* --- All Carousel & Scroll Systems --- */
         .carousel-wrapper { position: relative; display: flex; align-items: center; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
 
-        /* কার্ড হোভার ইফেক্ট */
         .card, .scroll-card { 
-            min-width: 300px;
-            background: var(--card-bg); 
-            border-radius: 12px; 
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            padding: 30px;
-            text-align: center;
+            min-width: 300px; background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); padding: 30px; text-align: center;
         }
-
-        .card:hover, .scroll-card:hover { 
-            border-color: var(--accent-color); 
-            transform: translateY(-10px); 
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
-            cursor: pointer;
-        }
+        .card:hover, .scroll-card:hover { border-color: var(--accent-color); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2); cursor: pointer; }
 
         .nav-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; font-weight: bold; box-shadow: 0 0 15px var(--accent-color); transition: 0.3s; }
         .nav-btn:hover { transform: scale(1.2); background: white; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
+        /* --- Project & Review Designs --- */
         .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
         .client-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
 
-        /* Routine Maker Styling */
+        /* --- Routine Maker Section --- */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
         .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
@@ -76,16 +77,13 @@
         .add-class-btn:hover { transform: rotate(90deg) scale(1.2); }
         .input-row { display: flex; gap: 10px; margin-bottom: 8px; }
         .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; }
-
-        /* Routine Output Table with Branding */
+        
         #routine-output { margin-top: 30px; background: white; color: black; padding: 30px; border-radius: 10px; display: none; border: 5px solid var(--primary-bg); }
         .routine-table { width: 100%; border-collapse: collapse; }
-        .routine-table th, .routine-table td { border: 1px solid #333; padding: 12px; text-align: left; }
+        .routine-table th, .routine-table td { border: 1px solid #333; padding: 12px; }
         .routine-branding { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; border-top: 2px solid #ddd; padding-top: 15px; }
-        .brand-text { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; }
-        #qrcode { background: white; padding: 5px; }
 
-        /* Animated Buttons */
+        /* --- Animated Buttons --- */
         .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .main-btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.4s; cursor: pointer; border: none; }
         .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
@@ -102,8 +100,23 @@
         <h1>CSE Project Hub - Bangladesh</h1>
         <p>Complete project support for undergraduate CSE students</p>
     </header>
-   
+
     <div class="container">
+        <div class="chat-section">
+            <div class="chat-row owner-row">
+                <img src="/images/owner.png" class="chat-img" alt="Owner">
+                <div class="chat-bubble owner-bubble">
+                    আপনার প্রোজেক্ট বা থিসিস নিয়ে কি ভাবছেন? আমরা দিচ্ছি কাস্টম হার্ডওয়্যার ও সফটওয়্যার সাপোর্ট।
+                </div>
+            </div>
+            <div class="chat-row client-row">
+                <img src="/images/client1.png" class="chat-img" alt="Client">
+                <div class="chat-bubble client-bubble">
+                    আমার একটি FPGA বেসড ডিপফেক ডিটেকশন সিস্টেম দরকার। আপনারা কি সাহায্য করতে পারবেন?
+                </div>
+            </div>
+        </div>
+
         <h2 class="section-title">Our Services</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
@@ -111,27 +124,25 @@
                 <div class="card"><h3>Software</h3><p>Web apps, Mobile apps, and Custom Solutions.</p></div>
                 <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Systems.</p></div>
                 <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
-                <div class="card"><h3>IoT</h3><p>Smart Home and Industrial IoT.</p></div>
-                <div class="card"><h3>Plagiarism</h3><p>Report Checking Services.</p></div>
-                <div class="card"><h3>Question Unlock</h3><p>Academic Research Support.</p></div>
-                <div class="card"><h3>ToolBox</h3><p>Premium Developer Resources.</p></div>
+                <div class="card"><h3>IoT</h3><p>Smart Automation.</p></div>
+                <div class="card"><h3>Plagiarism</h3><p>Report Checking.</p></div>
+                <div class="card"><h3>Question Unlock</h3><p>Research Support.</p></div>
+                <div class="card"><h3>ToolBox</h3><p>Developer Resources.</p></div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
-        <br><br>
-        
+
         <h2 class="section-title">Our Projects</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
                 <div class="scroll-card"><div class="project-img">🖥️</div><h3>FPGA Deepfake Detection</h3><p>Real-time system using noise analysis.</p></div>
-                <div class="scroll-card"><div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>High-accuracy security solutions.</p></div>
+                <div class="scroll-card"><div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>Security solutions.</p></div>
                 <div class="scroll-card"><div class="project-img">🌐</div><h3>Project Hub Portal</h3><p>Academic resource system.</p></div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
-        <br><br>
-        
+
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
@@ -147,12 +158,11 @@
             <div class="routine-box" id="routine-ui">
                 <div id="day-inputs-container"></div>
                 <button class="main-btn" style="background:#4CAF50;color:white;margin-top:20px;" onclick="generateRoutine()">Generate Routine</button>
-                
                 <div id="routine-output">
                     <h2 style="text-align:center;margin-bottom:20px;border-bottom: 2px solid #333;">Academic Routine</h2>
                     <table class="routine-table"><tbody id="table-body"></tbody></table>
                     <div class="routine-branding">
-                        <div class="brand-text">
+                        <div style="display:flex; align-items:center; gap:10px; font-weight:600; font-size:14px;">
                             <img src="/images/Logo.png" style="width:40px;height:40px;border-radius:50%;" alt="Logo">
                             <span>Made by CSE Project Hub BD</span>
                         </div>
@@ -161,7 +171,6 @@
                 </div>
                 <button id="dl-btn" class="main-btn" style="background:#ff9100;color:white;margin-top:15px;display:none;" onclick="downloadRoutine()">📥 Download Image</button>
             </div>
-
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="main-btn contact-btn" target="_blank">DM Us Now</a>
         </div>
     </div>
@@ -170,7 +179,6 @@
     <script>
         const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
         const container = document.getElementById('day-inputs-container');
-        
         days.forEach(day => {
             const div = document.createElement('div');
             div.className = 'day-input-group';
@@ -192,7 +200,7 @@
         }
 
         function toggleRoutineBox() { const b = document.getElementById('routine-ui'); b.style.display = b.style.display === 'block' ? 'none' : 'block'; }
-
+        
         function generateRoutine() {
             const tbody = document.getElementById('table-body'); tbody.innerHTML = '<tr><th style="background:#eee">Day</th><th style="background:#eee">Schedule</th></tr>';
             let hasData = false;
@@ -202,20 +210,14 @@
                 for (let i = 0; i < courses.length; i++) { if (courses[i].value) { hasData = true; content += `<div>• <strong>${courses[i].value}</strong>: ${times[i].value}</div>`; } }
                 if (content) tbody.innerHTML += `<tr><td><strong>${day}</strong></td><td>${content}</td></tr>`;
             });
-
-            if (!hasData) return alert("Please enter your schedule!");
-
+            if (!hasData) return alert("Please enter schedule!");
+            
             document.getElementById("qrcode").innerHTML = "";
             new QRCode(document.getElementById("qrcode"), { text: window.location.href, width: 60, height: 60 });
-            document.getElementById('routine-output').style.display = 'block';
-            document.getElementById('dl-btn').style.display = 'inline-block';
+            document.getElementById('routine-output').style.display = 'block'; document.getElementById('dl-btn').style.display = 'inline-block';
         }
 
-        function downloadRoutine() { 
-            html2canvas(document.getElementById('routine-output'), { scale: 2 }).then(c => { 
-                const a = document.createElement('a'); a.download = 'Routine_CSEProjectHub.png'; a.href = c.toDataURL(); a.click(); 
-            }); 
-        }
+        function downloadRoutine() { html2canvas(document.getElementById('routine-output')).then(c => { const a = document.createElement('a'); a.download = 'Routine.png'; a.href = c.toDataURL(); a.click(); }); }
     </script>
 </body>
 </html>
