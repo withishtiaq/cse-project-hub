@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSE Project Hub - BD</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
@@ -38,18 +38,29 @@
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
-        /* --- Chat Showcase Animation --- */
+        /* --- Chat Showcase Animation (Tiro Bangla Applied) --- */
         .chat-section { margin-bottom: 60px; display: flex; flex-direction: column; gap: 30px; }
         .chat-row { display: flex; align-items: center; gap: 15px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
         .owner-row { flex-direction: row-reverse; animation-delay: 0.5s; }
         .client-row { animation-delay: 1.5s; }
+        
         .chat-img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; box-shadow: 0 0 15px var(--accent-color); }
-        .chat-bubble { padding: 15px 20px; border-radius: 20px; max-width: 70%; line-height: 1.5; font-size: 0.95rem; }
-        .owner-bubble { background: var(--accent-color); color: var(--primary-bg); font-weight: 600; border-bottom-right-radius: 2px; }
+        
+        /* এখানে Tiro Bangla ফন্ট সেট করা হয়েছে */
+        .chat-bubble { 
+            padding: 15px 20px; 
+            border-radius: 20px; 
+            max-width: 70%; 
+            line-height: 1.6; 
+            font-size: 1.1rem; 
+            font-family: 'Tiro Bangla', serif; 
+        }
+        
+        .owner-bubble { background: var(--accent-color); color: var(--primary-bg); font-weight: 500; border-bottom-right-radius: 2px; }
         .client-bubble { background: var(--card-bg); color: white; border: 1px solid rgba(0, 229, 255, 0.3); border-bottom-left-radius: 2px; }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- All Carousel & Scroll Systems --- */
+        /* --- Carousel & Other Elements (অক্ষুণ্ণ রাখা হয়েছে) --- */
         .carousel-wrapper { position: relative; display: flex; align-items: center; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
@@ -64,26 +75,25 @@
         .nav-btn:hover { transform: scale(1.2); background: white; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
-        /* --- Project & Review Designs --- */
         .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
         .client-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
 
-        /* --- Routine Maker Section --- */
+        /* Routine Maker Styling */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
         .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .add-class-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .add-class-btn:hover { transform: rotate(90deg) scale(1.2); }
         .input-row { display: flex; gap: 10px; margin-bottom: 8px; }
         .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; }
         
-        #routine-output { margin-top: 30px; background: white; color: black; padding: 30px; border-radius: 10px; display: none; border: 5px solid var(--primary-bg); }
+        /* Routine Output (Branding with Tiro Bangla) */
+        #routine-output { margin-top: 30px; background: white; color: black; padding: 30px; border-radius: 10px; display: none; border: 5px solid var(--primary-bg); font-family: 'Tiro Bangla', serif; }
         .routine-table { width: 100%; border-collapse: collapse; }
         .routine-table th, .routine-table td { border: 1px solid #333; padding: 12px; }
         .routine-branding { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 20px; border-top: 2px solid #ddd; padding-top: 15px; }
 
-        /* --- Animated Buttons --- */
+        /* Animated Buttons */
         .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .main-btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.4s; cursor: pointer; border: none; }
         .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
@@ -125,7 +135,7 @@
                 <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Systems.</p></div>
                 <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
                 <div class="card"><h3>IoT</h3><p>Smart Automation.</p></div>
-                <div class="card"><h3>Plagiarism</h3><p>Report Checking.</p></div>
+                <div class="card"><h3>Plagiarism</h3><p>Report Checking Services.</p></div>
                 <div class="card"><h3>Question Unlock</h3><p>Research Support.</p></div>
                 <div class="card"><h3>ToolBox</h3><p>Developer Resources.</p></div>
             </div>
