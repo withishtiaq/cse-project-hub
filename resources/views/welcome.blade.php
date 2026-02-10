@@ -219,7 +219,12 @@
                     <h3>Project Hub Portal</h3>
                     <p>A full-stack web application for CSE academic support.</p>
                 </div>
+                <div class="scroll-card">
+                    <div class="project-img">🌐</div>
+                    <h3>Project Hub Portal</h3>
+                    <p>A full-stack web application for CSE academic support.</p>
                 </div>
+            </div>
         </div>
 
         <div class="container">
@@ -229,6 +234,11 @@
                     <img src="/images/client1.png" class="client-avatar" alt="Client">
                     <p>"Highly professional service! The hardware implementation was flawless."</p>
                     <span class="client-name">- BRACU Student</span>
+                </div>
+                <div class="scroll-card">
+                    <img src="/images/client2.png" class="client-avatar" alt="Client">
+                    <p>"Excellent documentation and AI support. Helped me a lot with my research."</p>
+                    <span class="client-name">- Research Scholar</span>
                 </div>
                 <div class="scroll-card">
                     <img src="/images/client2.png" class="client-avatar" alt="Client">
