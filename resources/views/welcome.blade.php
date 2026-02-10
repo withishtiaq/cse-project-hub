@@ -146,6 +146,33 @@
             color: var(--accent-color);
             font-style: normal;
         }     
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox এর জন্য স্ক্রলবার হাইড */
+            -ms-overflow-style: none;  /* IE/Edge এর জন্য */
+        }
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari এর জন্য স্ক্রলবার হাইড */
+        }
+        .scroll-card {
+            min-width: 300px; /* কার্ডের চওড়া নির্ধারণ */
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            transition: 0.3s;
+        }
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent-color);
+            object-fit: cover;
+        }    
     </style>
 </head>
 <body>
@@ -180,30 +207,34 @@
         
          
         <div class="container">
-            <h2 class="section-title">Our Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="project-img">🚀</div>
-                    <h3>FPGA Deepfake Detector</h3>
-                    <p>FPGA-Based Real-Time Deepfake Detection System.</p>
+            <h2 class="section-title">Our Featured Projects</h2>
+            <div class="scroll-container">
+                <div class="scroll-card">
+                    <div class="project-img">🖥️</div>
+                    <h3>FPGA Deepfake Detection</h3>
+                    <p>Real-time deepfake detection system using FPGA.</p>
                 </div>
-                <div class="card">
-                    <div class="project-img">🤖</div>
-                    <h3>AI Research Assistant</h3>
-                    <p>Automated tool for CSE academic research and noise analysis.</p>
+                <div class="scroll-card">
+                    <div class="project-img">🌐</div>
+                    <h3>Project Hub Portal</h3>
+                    <p>A full-stack web application for CSE academic support.</p>
                 </div>
-            </div>
+                </div>
         </div>
 
         <div class="container">
             <h2 class="section-title">Client Reviews</h2>
-            <div class="review-card">
-                "The project support I received for my final year thesis was exceptional. Highly recommended for CSE students!"
-                <span class="client-name">- BRACU Student</span>
-            </div>
-            <div class="review-card">
-                "Great quality hardware implementation and very clear documentation."
-                <span class="client-name">- Research Scholar</span>
+            <div class="scroll-container">
+                <div class="scroll-card">
+                    <img src="/images/client1.png" class="client-avatar" alt="Client">
+                    <p>"Highly professional service! The hardware implementation was flawless."</p>
+                    <span class="client-name">- BRACU Student</span>
+                </div>
+                <div class="scroll-card">
+                    <img src="/images/client2.png" class="client-avatar" alt="Client">
+                    <p>"Excellent documentation and AI support. Helped me a lot with my research."</p>
+                    <span class="client-name">- Research Scholar</span>
+                </div>
             </div>
         </div>
 
