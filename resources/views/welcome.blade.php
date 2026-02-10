@@ -21,6 +21,7 @@
             overflow-x: hidden;
         }
 
+        /* Hero Section */
         header { 
             background: linear-gradient(135deg, #0b1a2a 0%, #162a3d 100%);
             padding: 80px 20px; 
@@ -54,7 +55,22 @@
             text-transform: uppercase;
         }
 
-        /* সার্ভিস গ্রিড (আগের মতো) */
+        /* কমন কার্ড স্টাইল এবং হোভার ইফেক্ট */
+        .card, .scroll-card { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        }
+
+        .card:hover, .scroll-card:hover { 
+            border-color: var(--accent-color); 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+            cursor: pointer;
+        }
+
+        /* সার্ভিস গ্রিড */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
@@ -62,15 +78,7 @@
             margin-bottom: 60px;
         }
         
-        .card { 
-            background: var(--card-bg); 
-            padding: 25px; 
-            border-radius: 12px; 
-            text-align: center; 
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            transition: 0.4s; 
-        }
-        .card:hover { border-color: var(--accent-color); transform: translateY(-10px); }
+        .card { padding: 25px; text-align: center; }
         .card h3 { color: var(--accent-color); margin-bottom: 12px; }
 
         /* অনুভূমিক স্ক্রলিং সিস্টেম */
@@ -80,22 +88,15 @@
             gap: 20px;
             padding: 20px 5px;
             scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
         }
 
-        /* স্ক্রলবার স্টাইল (ঐচ্ছিক) */
         .scroll-container::-webkit-scrollbar { height: 6px; }
         .scroll-container::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
 
         .scroll-card {
             min-width: 320px;
-            background: var(--card-bg);
-            border-radius: 15px;
             padding: 25px;
-            border: 1px solid rgba(0, 229, 255, 0.1);
-            transition: 0.3s;
         }
-        .scroll-card:hover { border-color: var(--accent-color); }
 
         .project-img {
             width: 100%;
@@ -108,7 +109,10 @@
             justify-content: center;
             font-size: 3rem;
             border: 1px solid rgba(0, 229, 255, 0.2);
+            transition: 0.4s;
         }
+
+        .scroll-card:hover .project-img { transform: scale(1.02); border-color: var(--accent-color); }
 
         /* রিভিউ সেকশন স্টাইল */
         .client-info {
@@ -127,6 +131,7 @@
         .client-name { font-weight: 600; color: var(--accent-color); }
         .review-text { font-style: italic; font-size: 0.95rem; color: #b0bec5; line-height: 1.5; }
 
+        /* Action Button */
         .btn-container { text-align: center; margin-top: 50px; }
         .contact-btn { 
             display: inline-block; 
