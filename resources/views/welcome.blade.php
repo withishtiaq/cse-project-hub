@@ -187,7 +187,7 @@
                 <div class="chat-bubble client-bubble">আমার একটি FPGA বেসড ডিপফেক ডিটেকশন সিস্টেম দরকার। আপনারা কি সাহায্য করতে পারবেন?</div>
             </div>
         </div>
-        <br><br><br><br>
+        
         <h2 class="section-title">Our Services</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
