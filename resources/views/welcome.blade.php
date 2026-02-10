@@ -13,6 +13,8 @@
             --accent-color: #00e5ff; 
             --card-bg: #162a3d;
             --text-white: #ffffff;
+            --success-green: #00c853;
+            --warning-orange: #ffab00;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -89,16 +91,72 @@
         .nav-btn:hover { transform: scale(1.2); background: white; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
-        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
-        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
+        /* --- Animated Buttons --- */
+        .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        
+        .main-btn { 
+            padding: 16px 45px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            cursor: pointer; 
+            border: none; 
+            letter-spacing: 1px;
+            display: inline-block;
+        }
 
-        /* --- Professional Routine Maker (UI & Branded Output) --- */
+        /* Academic Routine Maker Button */
+        .routine-trigger { 
+            background: transparent; 
+            color: var(--accent-color); 
+            border: 2px solid var(--accent-color); 
+        }
+        .routine-trigger:hover { 
+            background: rgba(0, 229, 255, 0.1);
+            box-shadow: 0 0 25px var(--accent-color); 
+            transform: scale(1.08) translateY(-3px); 
+        }
+
+        /* Generate Branded Routine Button */
+        .gen-btn { 
+            background: linear-gradient(45deg, #00c853, #64dd17);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
+        }
+        .gen-btn:hover { 
+            box-shadow: 0 0 30px rgba(0, 200, 83, 0.6); 
+            transform: scale(1.08) translateY(-3px); 
+        }
+
+        /* Download Branded Image Button */
+        .dl-main-btn { 
+            background: linear-gradient(45deg, #ffab00, #ff6d00);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 171, 0, 0.3);
+        }
+        .dl-main-btn:hover { 
+            box-shadow: 0 0 30px rgba(255, 171, 0, 0.6); 
+            transform: scale(1.08) translateY(-3px); 
+        }
+
+        /* DM US NOW Button */
+        .contact-btn { 
+            background: var(--accent-color); 
+            color: var(--primary-bg); 
+            text-decoration: none; 
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+        }
+        .contact-btn:hover { 
+            box-shadow: 0 0 30px var(--accent-color); 
+            transform: scale(1.1) translateY(-5px); 
+            background: white;
+        }
+
+        /* Routine Maker Section Output */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
-        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .add-class-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; font-weight: bold; }
-        .input-row { display: flex; gap: 10px; margin-bottom: 8px; }
-        .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; }
+        .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; margin: 4px; }
         
         #routine-output { 
             margin-top: 30px; background: #ffffff; color: #1a1a1a; padding: 40px; border-radius: 5px; display: none; 
@@ -108,11 +166,6 @@
         .routine-table { width: 100%; border-collapse: collapse; position: relative; z-index: 1; }
         .routine-table th { background: #0b1a2a; color: white; padding: 12px; border: 1px solid #333; }
         .routine-table td { padding: 12px; border: 1px solid #ddd; }
-
-        .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .main-btn { padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.4s; cursor: pointer; border: none; }
-        .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
-        .contact-btn { background: var(--accent-color); color: var(--primary-bg); text-decoration: none; }
 
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
     </style>
@@ -139,7 +192,7 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="s-scroll">
-                <div class="card" onclick="showSnackbar('সিএসই প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
+                <div class="card" onclick="showSnackbar('আপনার প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
                 <div class="card" onclick="showSnackbar('আর্ডুইনো থেকে রোবোটিক্স—যেকোনো জটিল হার্ডওয়্যার প্রোজেক্টে আমরা আপনাকে পূর্ণ সহায়তা দিই।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
                 <div class="card" onclick="showSnackbar('আধুনিক এআই এবং মেশিন লার্নিং প্রোজেক্ট তৈরি করতে আমাদের টিম আপনার পাশে।')"><h3>AI & ML</h3><p>AI Solutions.</p></div>
                 <div class="card" onclick="showSnackbar('আপনার থিসিস রিপোর্টের ১০০% অরিজিনালিটি নিশ্চিত করুন আমাদের মাধ্যমে।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
@@ -153,10 +206,10 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
-                <div class="scroll-card" onclick="openModal('FPGA Deepfake Detection', '/images/Logo.png', 'এটি একটি রিয়েল-টাইম ডিপফেক ডিটেকশন সিস্টেম যা FPGA ব্যবহার করে স্প্যাশিও-টেম্পোরাল নয়েজ অ্যানালাইসিস করে।', false)">
+                <div class="scroll-card" onclick="openModal('FPGA Deepfake Detection', '/images/Logo.png', 'রিয়েল-টাইম ডিপফেক ডিটেকশন সিস্টেম যা FPGA ব্যবহার করে নয়েজ অ্যানালাইসিস করে।', false)">
                     <div class="project-img">🖥️</div><h3>FPGA Deepfake Detection</h3><p>Real-time noise analysis.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('AI Face Recognition', '/images/Logo.png', 'উন্নত মানের ফেস রিকগনিশন সিস্টেম যা হাই একুরেসি নিশ্চিত করে। এটি সিকিউরিটি সার্ভিসে ব্যবহারযোগ্য।', false)">
+                <div class="scroll-card" onclick="openModal('AI Face Recognition', '/images/Logo.png', 'হাই একুরেসি ফেস রিকগনিশন সিকিউরিটি সলিউশন।', false)">
                     <div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>Security solutions.</p>
                 </div>
             </div>
@@ -167,10 +220,10 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="r-scroll">
-                <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত। আমার থিসিসে তাঁরা অনেক বড় ভূমিকা রেখেছেন।', true)">
+                <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত।', true)">
                     <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client1.png" class="client-avatar" alt="C1"><span style="color:var(--accent-color);font-weight:600">BRACU Student</span></div><p>"Amazing hardware support!"</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'সিএসই স্টুডেন্টদের জন্য এটি সেরা পোর্টাল। কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত।', true)">
+                <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত।', true)">
                     <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client2.png" class="client-avatar" alt="C2"><span style="color:var(--accent-color);font-weight:600">CSE Learner</span></div><p>"Best thesis guide."</p>
                 </div>
             </div>
@@ -181,11 +234,11 @@
             <button class="main-btn routine-trigger" onclick="toggleRoutineBox()">📅 Academic Routine Maker</button>
             <div class="routine-box" id="routine-ui">
                 <div id="day-inputs-container"></div>
-                <button class="main-btn" style="background:#4CAF50;color:white;margin-top:20px;" onclick="generateRoutine()">Generate Branded Routine</button>
+                <button class="main-btn gen-btn" onclick="generateRoutine()">Generate Branded Routine</button>
                 <div id="routine-output">
                     <div class="watermark">CSE PROJECT HUB</div>
                     <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0b1a2a;padding-bottom:15px;margin-bottom:20px;">
-                        <div><h2 style="color:#0b1a2a;font-size:22px;">CSE Project Hub - BD</h2><p style="font-size:12px;color:#555;">Professional Academic Support Agency</p></div>
+                        <div><h2 style="color:#0b1a2a;font-size:22px;">CSE Project Hub - BD</h2><p style="font-size:12px;color:#555;">Official Branded Academic Routine</p></div>
                         <img src="/images/Logo.png" style="width:70px;height:70px;border-radius:50%;border:2px solid #0b1a2a;">
                     </div>
                     <table class="routine-table"><tbody id="table-body"></tbody></table>
@@ -194,7 +247,7 @@
                         <div style="text-align:center;border-top:2px solid #0b1a2a;min-width:140px;font-size:13px;font-weight:600;">Authorized by Agency</div>
                     </div>
                 </div>
-                <button id="dl-btn" class="main-btn" style="background:#ff9100;color:white;margin-top:15px;display:none;" onclick="downloadRoutine()">📥 Download Branded Image</button>
+                <button id="dl-btn" class="main-btn dl-main-btn" style="display:none;" onclick="downloadRoutine()">📥 Download Branded Image</button>
             </div>
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="main-btn contact-btn" target="_blank">DM Us Now</a>
         </div>
