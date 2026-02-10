@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section */
         header { 
             background: linear-gradient(135deg, #0b1a2a 0%, #162a3d 100%);
             padding: 80px 20px; 
@@ -55,7 +54,7 @@
             text-transform: uppercase;
         }
 
-        /* কমন কার্ড স্টাইল এবং হোভার ইফেক্ট */
+        /* কার্ড হোভার ইফেক্ট */
         .card, .scroll-card { 
             background: var(--card-bg); 
             border-radius: 12px; 
@@ -70,18 +69,19 @@
             cursor: pointer;
         }
 
-        /* সার্ভিস গ্রিড */
+        /* সার্ভিস গ্রিড - ৭টি কার্ডের জন্য অপ্টিমাইজড */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 25px; 
             margin-bottom: 60px;
         }
         
-        .card { padding: 25px; text-align: center; }
-        .card h3 { color: var(--accent-color); margin-bottom: 12px; }
+        .card { padding: 30px; text-align: center; }
+        .card h3 { color: var(--accent-color); margin-bottom: 12px; font-size: 1.4rem; }
+        .card p { font-size: 0.95rem; color: #b0bec5; line-height: 1.6; }
 
-        /* অনুভূমিক স্ক্রলিং সিস্টেম */
+        /* স্ক্রলিং সিস্টেম */
         .scroll-container {
             display: flex;
             overflow-x: auto;
@@ -93,10 +93,7 @@
         .scroll-container::-webkit-scrollbar { height: 6px; }
         .scroll-container::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
 
-        .scroll-card {
-            min-width: 320px;
-            padding: 25px;
-        }
+        .scroll-card { min-width: 320px; padding: 25px; }
 
         .project-img {
             width: 100%;
@@ -114,13 +111,7 @@
 
         .scroll-card:hover .project-img { transform: scale(1.02); border-color: var(--accent-color); }
 
-        /* রিভিউ সেকশন স্টাইল */
-        .client-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
+        .client-info { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         .client-avatar {
             width: 55px;
             height: 55px;
@@ -131,7 +122,6 @@
         .client-name { font-weight: 600; color: var(--accent-color); }
         .review-text { font-style: italic; font-size: 0.95rem; color: #b0bec5; line-height: 1.5; }
 
-        /* Action Button */
         .btn-container { text-align: center; margin-top: 50px; }
         .contact-btn { 
             display: inline-block; 
@@ -166,6 +156,19 @@
             <div class="card"><h3>Hardware</h3><p>Arduino, Robotics, and Embedded Systems.</p></div>
             <div class="card"><h3>AI & ML</h3><p>Deep Learning and Computer Vision.</p></div>
             <div class="card"><h3>IoT</h3><p>Smart Home and Industrial IoT Solutions.</p></div>
+            
+            <div class="card">
+                <h3>Plagiarism Checker</h3>
+                <p>Ensure your thesis or report is 100% original and academic-ready.</p>
+            </div>
+            <div class="card">
+                <h3>Question Unlock</h3>
+                <p>Unlock solutions for complex research and academic questions quickly.</p>
+            </div>
+            <div class="card">
+                <h3>ToolBox Subscription</h3>
+                <p>Get premium access to essential developer tools and student resources.</p>
+            </div>
         </div>
         
         <h2 class="section-title">Our Projects</h2>
