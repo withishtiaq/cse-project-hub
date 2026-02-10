@@ -107,7 +107,7 @@
 
     <header>
         <div class="logo-container">
-            <img src="{{ asset('images/Logo.png') }}" alt="Logo" style="width: 120px; height: auto;">
+            <img src="/images/Logo.png" alt="Logo" style="width: 120px; height: auto;">
         </div>
         <h1>CSE Project Hub - Bangladesh</h1>
         <p>Complete project support for undergraduate CSE students</p>
