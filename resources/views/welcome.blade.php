@@ -138,7 +138,19 @@
 
         /* Modals & SnackBar (অক্ষুণ্ণ) */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: auto; }
-        .modal-content { background-color: var(--card-bg); margin: 5% auto; padding: 35px; border: 2px solid var(--accent-color); width: 90%; max-width: 550px; border-radius: 20px; position: relative; text-align: center; box-shadow: 0 0 40px var(--accent-color); animation: modalZoom 0.4s; }
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 2% auto; /* ওপর থেকে গ্যাপ একটু কমানো হয়েছে */
+            padding: 30px;
+            border: 2px solid var(--accent-color);
+            width: 95%; /* মোবাইলের জন্য উইডথ বাড়ানো হয়েছে */
+            max-width: 850px; /* পপ-আপ এখন অনেক বড় দেখাবে */
+            border-radius: 20px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 229, 255, 0.3);
+            animation: modalZoom 0.4s;
+        }
         .close-modal { position: absolute; top: 15px; right: 20px; color: var(--accent-color); font-size: 2rem; cursor: pointer; }
         #snackbar { visibility: hidden; min-width: 320px; background-color: var(--card-bg); color: #fff; border-radius: 12px; padding: 25px; position: fixed; z-index: 1000; left: 50%; bottom: 30px; transform: translateX(-50%); border: 2px solid var(--accent-color); opacity: 0; transition: 0.4s; font-family: 'Tiro Bangla', serif; }
         #snackbar.show { visibility: visible; opacity: 1; }
@@ -263,19 +275,20 @@
             const img = document.getElementById("modalImg");
             
             if(r === true) { 
-                // এটি শুধুমাত্র রিভিউ বা ক্লায়েন্টের ছবির জন্য
+                // এটি শুধুমাত্র রিভিউর জন্য (ছবি গোল এবং ছোট থাকবে)
                 img.style.borderRadius = "50%"; 
                 img.style.width = "120px"; 
                 img.style.height = "120px"; 
-                img.style.margin = "0 auto 20px";
                 img.style.objectFit = "cover";
+                img.style.margin = "0 auto 20px";
             } else { 
-                // এটি শুধুমাত্র প্রজেক্টের ছবির জন্য
-                img.style.borderRadius = "10px"; 
+                // এটি প্রজেক্টের জন্য (ছবি বড় এবং ক্লিয়ার থাকবে)
+                img.style.borderRadius = "12px"; 
                 img.style.width = "100%"; 
                 img.style.height = "auto"; 
-                img.style.maxHeight = "300px";
-                img.style.objectFit = "contain"; 
+                img.style.maxHeight = "500px"; /* ছবির হাইট বাড়ানো হয়েছে */
+                img.style.objectFit = "contain"; /* ছবি জুম হবে না, পুরোটা দেখা যাবে */
+                img.style.marginBottom = "20px";
             }
             document.getElementById("universalModal").style.display = "block";
         }
