@@ -204,10 +204,10 @@
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
                 <div class="scroll-card" onclick="openModal('C-Based MiniVSFS', '/images/inode-based filesystem.png', 'একটি লাইটওয়েট ইনোড-ভিত্তিক ফাইলসিস্টেম যা সি ল্যাঙ্গুয়েজ ব্যবহার করে ডিস্ক ইমেজ তৈরি এবং ডেটা ম্যানেজমেন্ট করে।', false)">
-                    <div class="project-img"><img src="/images/inode-based filesystem.png" alt="FPGA Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>C-Based MiniVSFS</h3><p>Inode-based file system </p>
+                    <div class="project-img"><img src="/images/inode-based filesystem.png" alt="VSFS Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>C-Based MiniVSFS</h3><p>Inode-based file system </p>
                 </div>
-                <div class="scroll-card" onclick="openModal('AI Face Recognition', '/images/Logo.png', 'হাই একুরেসি ফেস রিকগনিশন সিকিউরিটি সলিউশন।', false)">
-                    <div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>Security solutions.</p>
+                <div class="scroll-card" onclick="openModal('Multi-Tribe Network using Cisco', '/images/Cisco Packet Tracer.png', 'Cisco Packet Tracer ব্যবহার করে অ্যানিমেল কিংডমের জন্য তৈরি মাল্টি-সেগমেন্ট নেটওয়ার্ক টপোলজি এবং ইন্টার-ট্রাইব কানেক্টিভিটি।', false)">
+                    <div class="project-img"><img src="/images/Cisco Packet Tracer.png" alt="CISCO Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Implement of Cisco Packet Tracer</h3><p>Hierarchical Tribal Networking.</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
