@@ -110,7 +110,30 @@
         .partner-img { width: 130px; height: auto; filter: grayscale(100%) opacity(0.6); transition: 0.4s ease; cursor: pointer; }
         .partner-img:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); filter: drop-shadow(0 0 10px var(--accent-color)); }
 
-        .project-img img { width: 100%; height: 100%; object-fit: cover; /* ছবি জুম হয়ে পুরো বক্স ফিল করবে */ display: block; }
+        .project-img { 
+            width: 100%; 
+            height: 180px; 
+            background: #0b1a2a; 
+            border-radius: 10px; 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border: 1px solid rgba(0, 229, 255, 0.2); 
+            overflow: hidden; 
+        }
+        .client-avatar {
+            width: 55px; 
+            height: 55px; 
+            border-radius: 50%; 
+            object-fit: cover;
+        }
+        .project-img img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
 
         /* Modals & SnackBar (অক্ষুণ্ণ) */
@@ -239,17 +262,20 @@
             document.getElementById("modalDesc").innerText = d;
             const img = document.getElementById("modalImg");
             
-            if(r) { // রিভিউয়ার ছবি হলে
+            if(r === true) { 
+                // এটি শুধুমাত্র রিভিউ বা ক্লায়েন্টের ছবির জন্য
                 img.style.borderRadius = "50%"; 
-                img.style.width = "150px"; 
-                img.style.height = "150px"; 
+                img.style.width = "120px"; 
+                img.style.height = "120px"; 
+                img.style.margin = "0 auto 20px";
                 img.style.objectFit = "cover";
-            } else { // প্রজেক্টের ছবি হলে
+            } else { 
+                // এটি শুধুমাত্র প্রজেক্টের ছবির জন্য
                 img.style.borderRadius = "10px"; 
                 img.style.width = "100%"; 
                 img.style.height = "auto"; 
-                img.style.maxHeight = "350px"; /* খুব বেশি বড় হবে না */
-                img.style.objectFit = "contain"; /* পুরো ছবি দেখাবে */
+                img.style.maxHeight = "300px";
+                img.style.objectFit = "contain"; 
             }
             document.getElementById("universalModal").style.display = "block";
         }
