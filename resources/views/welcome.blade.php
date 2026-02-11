@@ -40,18 +40,38 @@
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
-        /* --- Chat Animation --- */
-        .chat-section { margin-bottom: 60px; display: flex; flex-direction: column; gap: 30px; }
-        .chat-row { display: flex; align-items: center; gap: 15px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
+        /* --- Updated Chat Section with Large Transparent Images --- */
+        .chat-section { margin-bottom: 80px; display: flex; flex-direction: column; gap: 50px; }
+        .chat-row { display: flex; align-items: center; gap: 20px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
         .owner-row { flex-direction: row-reverse; animation-delay: 0.5s; }
         .client-row { animation-delay: 1.5s; }
-        .chat-img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
-        .chat-bubble { padding: 15px 20px; border-radius: 20px; max-width: 70%; line-height: 1.6; font-size: 1.1rem; font-family: 'Tiro Bangla', serif; }
+
+        /* বড় এবং ট্রান্সপারেন্ট ছবির স্টাইল */
+        .chat-img-large { 
+            width: 150px; /* ছবি বড় করা হয়েছে */
+            height: auto; 
+            background: transparent; /* ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড */
+            border: 3px solid var(--accent-color); /* স্ট্রোক যোগ করা হয়েছে */
+            border-radius: 15px; /* হালকা কার্ভ শেপ */
+            padding: 5px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            object-fit: contain;
+        }
+
+        /* মাউস নিয়ে গেলে এনিমেশন */
+        .chat-img-large:hover { 
+            transform: scale(1.1) rotate(3deg); 
+            box-shadow: 0 0 30px var(--accent-color);
+            border-color: #fff;
+        }
+
+        .chat-bubble { padding: 20px 25px; border-radius: 20px; max-width: 60%; line-height: 1.6; font-size: 1.1rem; font-family: 'Tiro Bangla', serif; position: relative; }
         .owner-bubble { background: var(--accent-color); color: var(--primary-bg); font-weight: 500; border-bottom-right-radius: 2px; }
         .client-bubble { background: var(--card-bg); color: white; border: 1px solid rgba(0, 229, 255, 0.3); border-bottom-left-radius: 2px; }
+        
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Snackbar & Modal --- */
+        /* --- Snackbar & Modal (অক্ষুণ্ণ) --- */
         #snackbar {
             visibility: hidden; min-width: 320px; background-color: var(--card-bg); color: #fff;
             border-radius: 12px; padding: 25px; position: fixed; z-index: 1000; left: 50%; bottom: 30px;
@@ -78,7 +98,7 @@
         .modal-title { color: var(--accent-color); margin-bottom: 15px; font-size: 1.6rem; }
         .modal-desc { font-family: 'Tiro Bangla', serif; font-size: 1.15rem; line-height: 1.6; color: #ffffff; }
 
-        /* --- Carousel & Scrolls --- */
+        /* --- Carousel & Scrolls (অক্ষুণ্ণ) --- */
         .carousel-wrapper { position: relative; display: flex; align-items: center; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
@@ -91,7 +111,7 @@
         .nav-btn:hover { transform: scale(1.2); background: white; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
-        /* --- Animated Buttons --- */
+        /* --- Animated Buttons (অক্ষুণ্ণ) --- */
         .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
         .main-btn { 
             padding: 16px 45px; border-radius: 50px; font-weight: 700; text-transform: uppercase; 
@@ -107,7 +127,7 @@
         .contact-btn { background: var(--accent-color); color: var(--primary-bg); text-decoration: none; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3); }
         .contact-btn:hover { box-shadow: 0 0 30px var(--accent-color); transform: scale(1.1) translateY(-5px); background: white; }
 
-        /* Routine Maker Section */
+        /* Routine Section Style (অক্ষুণ্ণ) */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
         .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; margin: 4px; }
@@ -117,12 +137,14 @@
         .routine-table th { background: #0b1a2a; color: white; padding: 12px; border: 1px solid #333; }
         .routine-table td { padding: 12px; border: 1px solid #ddd; }
 
-        /* --- Partner Logos (Static) --- */
+        /* --- Partner Logos (Static) (অক্ষুণ্ণ) --- */
         .partners-static { margin: 80px 0; text-align: center; }
         .partners-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; padding: 20px; }
         .partner-img { width: 130px; height: auto; filter: grayscale(100%) opacity(0.6); transition: 0.4s ease; cursor: pointer; }
         .partner-img:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); filter: drop-shadow(0 0 10px var(--accent-color)); }
 
+        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
+        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
     </style>
 </head>
@@ -148,12 +170,17 @@
     <div class="container">
         <div class="chat-section">
             <div class="chat-row owner-row">
-                <img src="/images/owner.png" class="chat-img" alt="Owner">
-                <div class="chat-bubble owner-bubble">আপনার প্রোজেক্ট বা থিসিস নিয়ে কি ভাবছেন? আমরা দিচ্ছি কাস্টম হার্ডওয়্যার ও সফটওয়্যার সাপোর্ট।</div>
+                <img src="/images/owner.png" class="chat-img-large" alt="Owner">
+                <div class="chat-bubble owner-bubble">
+                    আপনার প্রোজেক্ট বা থিসিস নিয়ে কি ভাবছেন? আমরা দিচ্ছি কাস্টম হার্ডওয়্যার ও সফটওয়্যার সাপোর্ট।
+                </div>
             </div>
+            
             <div class="chat-row client-row">
-                <img src="/images/client1.png" class="chat-img" alt="Client">
-                <div class="chat-bubble client-bubble">আমার একটি FPGA বেসড ডিপফেক ডিটেকশন সিস্টেম দরকার। আপনারা কি সাহায্য করতে পারবেন?</div>
+                <img src="/images/client1.png" class="chat-img-large" alt="Client">
+                <div class="chat-bubble client-bubble">
+                    আমার একটি FPGA বেসড ডিপফেক ডিটেকশন সিস্টেম দরকার। আপনারা কি সাহায্য করতে পারবেন?
+                </div>
             </div>
         </div>
         
@@ -172,6 +199,7 @@
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
 
+        <br><br><br><br>
         <h2 class="section-title">Our Projects</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
@@ -186,6 +214,7 @@
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
 
+        <br><br><br><br>
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
