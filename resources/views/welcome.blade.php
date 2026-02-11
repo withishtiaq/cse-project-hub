@@ -198,6 +198,7 @@
                 <div class="card" onclick="showSnackbar('আপনার থিসিস রিপোর্টের ১০০% অরিজিনালিটি নিশ্চিত করুন আমাদের মাধ্যমে।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
                 <div class="card" onclick="showSnackbar('যেকোনো জটিল একাডেমিক প্রশ্নের সমাধান পাবেন এখানে।')"><h3>Question Unlock</h3><p>Research Support.</p></div>
                 <div class="card" onclick="showSnackbar('প্রয়োজনীয় সব প্রিমিয়াম ডেভেলপার রিসোর্সের অ্যাক্সেস।')"><h3>ToolBox</h3><p>Premium Tools.</p></div>
+                <div class="card" onclick="showSnackbar('প্রিমিয়াম রিসোর্সের টিপস এন্ড ট্রিকস।')"><h3>GiveWay</h3><p>Tips & Trick.</p></div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
