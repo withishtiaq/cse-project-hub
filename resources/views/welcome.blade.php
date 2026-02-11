@@ -51,20 +51,6 @@
         .client-bubble { background: var(--card-bg); color: white; border: 1px solid rgba(0, 229, 255, 0.3); border-bottom-left-radius: 2px; }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Our Partners Section --- */
-        .partners-section {
-            background: rgba(22, 42, 61, 0.5);
-            padding: 40px 0;
-            margin: 60px 0;
-            border-top: 1px solid rgba(0, 229, 255, 0.1);
-            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
-        }
-        .partners-slider { display: flex; overflow: hidden; white-space: nowrap; position: relative; }
-        .partners-track { display: flex; gap: 60px; animation: slidePartners 25s linear infinite; }
-        .partner-logo { width: 120px; height: 60px; object-fit: contain; filter: grayscale(100%) brightness(200%); opacity: 0.6; transition: 0.3s; }
-        .partner-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
-        @keyframes slidePartners { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
         /* --- Snackbar & Modal --- */
         #snackbar {
             visibility: hidden; min-width: 320px; background-color: var(--card-bg); color: #fff;
@@ -121,7 +107,7 @@
         .contact-btn { background: var(--accent-color); color: var(--primary-bg); text-decoration: none; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3); }
         .contact-btn:hover { box-shadow: 0 0 30px var(--accent-color); transform: scale(1.1) translateY(-5px); background: white; }
 
-        /* Routine Output */
+        /* Routine Maker Section */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
         .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; margin: 4px; }
@@ -131,8 +117,12 @@
         .routine-table th { background: #0b1a2a; color: white; padding: 12px; border: 1px solid #333; }
         .routine-table td { padding: 12px; border: 1px solid #ddd; }
 
-        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
-        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
+        /* --- Partner Logos (Static) --- */
+        .partners-static { margin: 80px 0; text-align: center; }
+        .partners-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; padding: 20px; }
+        .partner-img { width: 130px; height: auto; filter: grayscale(100%) opacity(0.6); transition: 0.4s ease; cursor: pointer; }
+        .partner-img:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); filter: drop-shadow(0 0 10px var(--accent-color)); }
+
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
     </style>
 </head>
@@ -182,7 +172,6 @@
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
 
-        <br><br><br><br>
         <h2 class="section-title">Our Projects</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
@@ -197,7 +186,6 @@
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
 
-        <br><br><br><br>
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
@@ -213,21 +201,14 @@
         </div>
     </div>
 
-    <div class="partners-section">
-        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 30px;">Trusted Partners</h2>
-        <div class="partners-slider">
-            <div class="partners-track">
-                <img src="/images/partner1.png" alt="P1" class="partner-logo">
-                <img src="/images/partner2.png" alt="P2" class="partner-logo">
-                <img src="/images/partner3.png" alt="P3" class="partner-logo">
-                <img src="/images/partner4.png" alt="P4" class="partner-logo">
-                <img src="/images/partner5.png" alt="P5" class="partner-logo">
-                <img src="/images/partner1.png" alt="P1" class="partner-logo">
-                <img src="/images/partner2.png" alt="P2" class="partner-logo">
-                <img src="/images/partner3.png" alt="P3" class="partner-logo">
-                <img src="/images/partner4.png" alt="P4" class="partner-logo">
-                <img src="/images/partner5.png" alt="P5" class="partner-logo">
-            </div>
+    <div class="partners-static">
+        <h2 class="section-title" style="font-size: 1.2rem; opacity: 0.8;">Our Trusted Partners</h2>
+        <div class="partners-grid">
+            <img src="/images/partner1.png" alt="P1" class="partner-img">
+            <img src="/images/partner2.png" alt="P2" class="partner-img">
+            <img src="/images/partner3.png" alt="P3" class="partner-img">
+            <img src="/images/partner4.png" alt="P4" class="partner-img">
+            <img src="/images/partner5.png" alt="P5" class="partner-img">
         </div>
     </div>
 
@@ -244,14 +225,11 @@
                         <img src="/images/Logo.png" style="width:70px;height:70px;border-radius:50%;border:2px solid #0b1a2a;">
                     </div>
                     <table class="routine-table"><tbody id="table-body"></tbody></table>
-                    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px;padding-top:15px;border-top:1px solid #eee;">
-                        <div id="qrcode-box"></div>
-                        <div style="text-align:center;border-top:2px solid #0b1a2a;min-width:140px;font-size:13px;font-weight:600;">Authorized by Agency</div>
-                    </div>
+                    <div id="qrcode-box"></div>
                 </div>
                 <button id="dl-btn" class="main-btn dl-main-btn" style="display:none;" onclick="downloadRoutine()">📥 Download Branded Image</button>
             </div>
-            <a href="https://www.facebook.com/profile.php?id=61585433384743" class="main-btn contact-btn" target="_blank">DM Us Now</a>
+            <a href="https://wa.me/8801642839956" class="main-btn contact-btn" target="_blank">DM Us Now</a>
         </div>
     </div>
 
@@ -294,7 +272,6 @@
             document.getElementById(`rows-${day}`).appendChild(row);
         }
         function toggleRoutineBox() { const b = document.getElementById('routine-ui'); b.style.display = b.style.display === 'block' ? 'none' : 'block'; }
-        
         function generateRoutine() {
             const tbody = document.getElementById('table-body'); tbody.innerHTML = '<tr><th style="width:25%">Day</th><th>Schedule</th></tr>';
             let hasData = false;
