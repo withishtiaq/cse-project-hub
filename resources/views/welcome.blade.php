@@ -209,8 +209,8 @@
                 <div class="scroll-card" onclick="openModal('Multi-Tribe Network using Cisco', '/images/Cisco Packet Tracer.png', 'Cisco Packet Tracer ব্যবহার করে অ্যানিমেল কিংডমের জন্য তৈরি মাল্টি-সেগমেন্ট নেটওয়ার্ক টপোলজি এবং ইন্টার-ট্রাইব কানেক্টিভিটি।', false)">
                     <div class="project-img"><img src="/images/Cisco Packet Tracer.png" alt="CISCO Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Cisco Packet Tracer</h3><p>Hierarchical Tribal Networking.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা ডাটাবেস প্রোজেক্ট তৈরির জন্য ব্যবহৃত হয়।', false)">
-                    <div class="project-img"><img src="/images/Database Systems.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Database Using Sql, Mysql, php, postsql</h3><p>Dynamic Database Project.</p>
+                <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
+                    <div class="project-img"><img src="/images/Database Systems.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Database Project</h3><p>Using Sql, Mysql, PostSql, php.</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
