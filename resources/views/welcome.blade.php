@@ -51,6 +51,20 @@
         .client-bubble { background: var(--card-bg); color: white; border: 1px solid rgba(0, 229, 255, 0.3); border-bottom-left-radius: 2px; }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
+        /* --- Our Partners Section --- */
+        .partners-section {
+            background: rgba(22, 42, 61, 0.5);
+            padding: 40px 0;
+            margin: 60px 0;
+            border-top: 1px solid rgba(0, 229, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+        .partners-slider { display: flex; overflow: hidden; white-space: nowrap; position: relative; }
+        .partners-track { display: flex; gap: 60px; animation: slidePartners 25s linear infinite; }
+        .partner-logo { width: 120px; height: 60px; object-fit: contain; filter: grayscale(100%) brightness(200%); opacity: 0.6; transition: 0.3s; }
+        .partner-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+        @keyframes slidePartners { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
         /* --- Snackbar & Modal --- */
         #snackbar {
             visibility: hidden; min-width: 320px; background-color: var(--card-bg); color: #fff;
@@ -93,84 +107,49 @@
 
         /* --- Animated Buttons --- */
         .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-        
         .main-btn { 
-            padding: 16px 45px; 
-            border-radius: 50px; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            cursor: pointer; 
-            border: none; 
-            letter-spacing: 1px;
-            display: inline-block;
+            padding: 16px 45px; border-radius: 50px; font-weight: 700; text-transform: uppercase; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; border: none; 
+            letter-spacing: 1px; display: inline-block;
         }
+        .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
+        .routine-trigger:hover { background: rgba(0, 229, 255, 0.1); box-shadow: 0 0 25px var(--accent-color); transform: scale(1.08) translateY(-3px); }
+        .gen-btn { background: linear-gradient(45deg, #00c853, #64dd17); color: white; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3); }
+        .gen-btn:hover { box-shadow: 0 0 30px rgba(0, 200, 83, 0.6); transform: scale(1.08) translateY(-3px); }
+        .dl-main-btn { background: linear-gradient(45deg, #ffab00, #ff6d00); color: white; box-shadow: 0 4px 15px rgba(255, 171, 0, 0.3); }
+        .dl-main-btn:hover { box-shadow: 0 0 30px rgba(255, 171, 0, 0.6); transform: scale(1.08) translateY(-3px); }
+        .contact-btn { background: var(--accent-color); color: var(--primary-bg); text-decoration: none; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3); }
+        .contact-btn:hover { box-shadow: 0 0 30px var(--accent-color); transform: scale(1.1) translateY(-5px); background: white; }
 
-        /* Academic Routine Maker Button */
-        .routine-trigger { 
-            background: transparent; 
-            color: var(--accent-color); 
-            border: 2px solid var(--accent-color); 
-        }
-        .routine-trigger:hover { 
-            background: rgba(0, 229, 255, 0.1);
-            box-shadow: 0 0 25px var(--accent-color); 
-            transform: scale(1.08) translateY(-3px); 
-        }
-
-        /* Generate Branded Routine Button */
-        .gen-btn { 
-            background: linear-gradient(45deg, #00c853, #64dd17);
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
-        }
-        .gen-btn:hover { 
-            box-shadow: 0 0 30px rgba(0, 200, 83, 0.6); 
-            transform: scale(1.08) translateY(-3px); 
-        }
-
-        /* Download Branded Image Button */
-        .dl-main-btn { 
-            background: linear-gradient(45deg, #ffab00, #ff6d00);
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 171, 0, 0.3);
-        }
-        .dl-main-btn:hover { 
-            box-shadow: 0 0 30px rgba(255, 171, 0, 0.6); 
-            transform: scale(1.08) translateY(-3px); 
-        }
-
-        /* DM US NOW Button */
-        .contact-btn { 
-            background: var(--accent-color); 
-            color: var(--primary-bg); 
-            text-decoration: none; 
-            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
-        }
-        .contact-btn:hover { 
-            box-shadow: 0 0 30px var(--accent-color); 
-            transform: scale(1.1) translateY(-5px); 
-            background: white;
-        }
-
-        /* Routine Maker Section Output */
+        /* Routine Output */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
         .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
         .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; margin: 4px; }
-        
-        #routine-output { 
-            margin-top: 30px; background: #ffffff; color: #1a1a1a; padding: 40px; border-radius: 5px; display: none; 
-            border: 12px solid #0b1a2a; position: relative; font-family: 'Tiro Bangla', serif;
-        }
+        #routine-output { margin-top: 30px; background: #ffffff; color: #1a1a1a; padding: 40px; border-radius: 5px; display: none; border: 12px solid #0b1a2a; position: relative; font-family: 'Tiro Bangla', serif; }
         .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-30deg); font-size: 70px; color: rgba(0,0,0,0.03); font-weight: bold; pointer-events: none; z-index: 0; }
         .routine-table { width: 100%; border-collapse: collapse; position: relative; z-index: 1; }
         .routine-table th { background: #0b1a2a; color: white; padding: 12px; border: 1px solid #333; }
         .routine-table td { padding: 12px; border: 1px solid #ddd; }
 
+        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
+        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
     </style>
 </head>
 <body>
+
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/679a953a825083258e0811e5/1iipuipvt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+
     <header>
         <div class="logo-container"><img src="/images/Logo.png" alt="Logo" style="width: 120px;"></div>
         <h1>CSE Project Hub - Bangladesh</h1>
@@ -180,7 +159,7 @@
         <div class="chat-section">
             <div class="chat-row owner-row">
                 <img src="/images/owner.png" class="chat-img" alt="Owner">
-                <div class="chat-bubble owner-bubble">আপনার প্রোজেক্ট বা থিসিস নিয়ে কি ভাবছেন? আমরা দিচ্ছি কাস্টম হার্ডওয়্যার ও সফটওয়্যার সাপোর্ট।</div>
+                <div class="chat-bubble owner-bubble">আপনার প্রোজেক্ট বা থিসিস নিয়ে কি ভাবছেন? আমরা দিচ্ছি কাস্টম হার্ডওয়্যার ও সফটওয়্যার সাপোর্ট।</div>
             </div>
             <div class="chat-row client-row">
                 <img src="/images/client1.png" class="chat-img" alt="Client">
@@ -192,16 +171,17 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="s-scroll">
-                <div class="card" onclick="showSnackbar('আপনার প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
-                <div class="card" onclick="showSnackbar('আর্ডুইনো থেকে রোবোটিক্স—যেকোনো জটিল হার্ডওয়্যার প্রোজেক্টে আমরা আপনাকে পূর্ণ সহায়তা দিই।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
+                <div class="card" onclick="showSnackbar('আপনার প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
+                <div class="card" onclick="showSnackbar('আর্ডুইনো থেকে রোবোটিক্স—যেকোনো জটিল হার্ডওয়্যার প্রোজেক্টে আমরা আপনাকে পূর্ণ সহায়তা দিই।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
                 <div class="card" onclick="showSnackbar('আধুনিক এআই এবং মেশিন লার্নিং প্রোজেক্ট তৈরি করতে আমাদের টিম আপনার পাশে।')"><h3>AI & ML</h3><p>AI Solutions.</p></div>
                 <div class="card" onclick="showSnackbar('আপনার থিসিস রিপোর্টের ১০০% অরিজিনালিটি নিশ্চিত করুন আমাদের মাধ্যমে।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
                 <div class="card" onclick="showSnackbar('যেকোনো জটিল একাডেমিক প্রশ্নের সমাধান পাবেন এখানে।')"><h3>Question Unlock</h3><p>Research Support.</p></div>
-                <div class="card" onclick="showSnackbar('প্রয়োজনীয় সব প্রিমিয়াম ডেভেলপার রিসোর্সের অ্যাক্সেস।')"><h3>ToolBox</h3><p>Premium Tools.</p></div>
-                <div class="card" onclick="showSnackbar('প্রিমিয়াম রিসোর্সের টিপস এন্ড ট্রিকস।')"><h3>GiveWay</h3><p>Tips & Trick.</p></div>
+                <div class="card" onclick="showSnackbar('প্রয়োজনীয় সব প্রিমিয়াম ডেভেলপার রিসোর্সের অ্যাক্সেস।')"><h3>ToolBox</h3><p>Premium Tools.</p></div>
+                <div class="card" onclick="showSnackbar('প্রিমিয়াম রিসোর্সের টিপস এন্ড ট্রিকস।')"><h3>GiveWay</h3><p>Tips & Trick.</p></div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
+
         <br><br><br><br>
         <h2 class="section-title">Our Projects</h2>
         <div class="carousel-wrapper">
@@ -216,26 +196,47 @@
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
+
         <br><br><br><br>
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="r-scroll">
-                <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত।', true)">
+                <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত।', true)">
                     <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client1.png" class="client-avatar" alt="C1"><span style="color:var(--accent-color);font-weight:600">BRACU Student</span></div><p>"Amazing hardware support!"</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত।', true)">
+                <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত।', true)">
                     <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client2.png" class="client-avatar" alt="C2"><span style="color:var(--accent-color);font-weight:600">CSE Learner</span></div><p>"Best thesis guide."</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('r-scroll', 1)">&#10095;</button>
         </div>
+    </div>
 
+    <div class="partners-section">
+        <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 30px;">Trusted Partners</h2>
+        <div class="partners-slider">
+            <div class="partners-track">
+                <img src="/images/partner1.png" alt="P1" class="partner-logo">
+                <img src="/images/partner2.png" alt="P2" class="partner-logo">
+                <img src="/images/partner3.png" alt="P3" class="partner-logo">
+                <img src="/images/partner4.png" alt="P4" class="partner-logo">
+                <img src="/images/partner5.png" alt="P5" class="partner-logo">
+                <img src="/images/partner1.png" alt="P1" class="partner-logo">
+                <img src="/images/partner2.png" alt="P2" class="partner-logo">
+                <img src="/images/partner3.png" alt="P3" class="partner-logo">
+                <img src="/images/partner4.png" alt="P4" class="partner-logo">
+                <img src="/images/partner5.png" alt="P5" class="partner-logo">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <div class="btn-container">
             <button class="main-btn routine-trigger" onclick="toggleRoutineBox()">📅 Academic Routine Maker</button>
             <div class="routine-box" id="routine-ui">
                 <div id="day-inputs-container"></div>
-                <button class="main-btn gen-btn" onclick="generateRoutine()">Generate Academic Routine</button>
+                <button class="main-btn gen-btn" onclick="generateRoutine()">Generate Branded Routine</button>
                 <div id="routine-output">
                     <div class="watermark">CSE PROJECT HUB</div>
                     <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0b1a2a;padding-bottom:15px;margin-bottom:20px;">
@@ -248,7 +249,7 @@
                         <div style="text-align:center;border-top:2px solid #0b1a2a;min-width:140px;font-size:13px;font-weight:600;">Authorized by Agency</div>
                     </div>
                 </div>
-                <button id="dl-btn" class="main-btn dl-main-btn" style="display:none;" onclick="downloadRoutine()">📥 Download Academic Routin</button>
+                <button id="dl-btn" class="main-btn dl-main-btn" style="display:none;" onclick="downloadRoutine()">📥 Download Branded Image</button>
             </div>
             <a href="https://www.facebook.com/profile.php?id=61585433384743" class="main-btn contact-btn" target="_blank">DM Us Now</a>
         </div>
