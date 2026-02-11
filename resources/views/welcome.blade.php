@@ -110,8 +110,7 @@
         .partner-img { width: 130px; height: auto; filter: grayscale(100%) opacity(0.6); transition: 0.4s ease; cursor: pointer; }
         .partner-img:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); filter: drop-shadow(0 0 10px var(--accent-color)); }
 
-        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
-        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; /* ছবি জুম হয়ে পুরো বক্স ফিল করবে */ display: block; }
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
 
         /* Modals & SnackBar (অক্ষুণ্ণ) */
@@ -233,11 +232,25 @@
 
     <script>
         // Modal, Snackbar, Scroll, Routine Maker ফাংশনগুলো হুবহু আগের মতোই আছে
+        /* openModal ফাংশনটি এভাবে পরিবর্তন করুন */
         function openModal(t, i, d, r) {
-            document.getElementById("modalTitle").innerText = t; document.getElementById("modalImg").src = i; document.getElementById("modalDesc").innerText = d;
+            document.getElementById("modalTitle").innerText = t; 
+            document.getElementById("modalImg").src = i; 
+            document.getElementById("modalDesc").innerText = d;
             const img = document.getElementById("modalImg");
-            if(r) { img.style.borderRadius = "50%"; img.style.width = "150px"; img.style.height = "150px"; }
-            else { img.style.borderRadius = "10px"; img.style.width = "100%"; img.style.height = "250px"; }
+            
+            if(r) { // রিভিউয়ার ছবি হলে
+                img.style.borderRadius = "50%"; 
+                img.style.width = "150px"; 
+                img.style.height = "150px"; 
+                img.style.objectFit = "cover";
+            } else { // প্রজেক্টের ছবি হলে
+                img.style.borderRadius = "10px"; 
+                img.style.width = "100%"; 
+                img.style.height = "auto"; 
+                img.style.maxHeight = "350px"; /* খুব বেশি বড় হবে না */
+                img.style.objectFit = "contain"; /* পুরো ছবি দেখাবে */
+            }
             document.getElementById("universalModal").style.display = "block";
         }
         function closeModal() { document.getElementById("universalModal").style.display = "none"; }
