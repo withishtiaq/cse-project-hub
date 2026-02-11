@@ -40,18 +40,16 @@
         .container { max-width: 1100px; margin: 50px auto; padding: 20px; position: relative; }
         .section-title { text-align: center; font-size: 2rem; color: var(--accent-color); margin-bottom: 30px; text-transform: uppercase; }
 
-        /* --- Updated Chat Section: Body-hugging Stroke & Large Transparent Image --- */
+        /* --- Chat Section --- */
         .chat-section { margin-bottom: 80px; display: flex; flex-direction: column; gap: 40px; }
         .chat-row { display: flex; align-items: flex-end; gap: 15px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s forwards; }
         .owner-row { flex-direction: row-reverse; animation-delay: 0.5s; }
         .client-row { animation-delay: 1.5s; }
 
-        /* এই ক্লাসটি ছবির শরীরের ধার ঘেঁষে স্ট্রোক তৈরি করবে */
         .chat-img-body { 
-            width: 320px; /* ছবি বড় করা হয়েছে */
+            width: 320px; 
             height: auto;
             background: transparent;
-            /* ড্রপ শ্যাডো দিয়ে বডি-লাইনের চারদিকে স্ট্রোক তৈরি */
             filter: drop-shadow(2px 0 0 var(--accent-color)) 
                     drop-shadow(-2px 0 0 var(--accent-color)) 
                     drop-shadow(0 2px 0 var(--accent-color)) 
@@ -72,49 +70,62 @@
         
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- All Carousel, Modals & Snackbar (অক্ষুণ্ণ) --- */
+        /* --- Carousel & Projects Style --- */
         .carousel-wrapper { position: relative; display: flex; align-items: center; }
         .scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 20px 5px; scroll-behavior: smooth; scrollbar-width: none; }
         .scroll-container::-webkit-scrollbar { display: none; }
-        .card, .scroll-card { min-width: 300px; background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.1); transition: 0.4s; padding: 30px; text-align: center; }
+        .card, .scroll-card { min-width: 320px; background: var(--card-bg); border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.1); transition: 0.4s; padding: 20px; text-align: center; }
         .card:hover, .scroll-card:hover { border-color: var(--accent-color); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2); cursor: pointer; }
+        
+        /* প্রজেক্ট ইমেজ কন্টেইনার ফিক্স */
+        .project-img { 
+            width: 100%; 
+            height: 180px; 
+            background: #0b1a2a; 
+            border-radius: 10px; 
+            margin-bottom: 15px; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            border: 1px solid rgba(0, 229, 255, 0.1);
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ছবিকে জুম করে সুন্দরভাবে ফিট করবে */
+            display: block;
+        }
+
         .nav-btn { background: var(--accent-color); color: var(--primary-bg); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; font-weight: bold; transition: 0.3s; }
         .nav-btn:hover { transform: scale(1.2); background: white; }
         .prev-btn { left: -20px; } .next-btn { right: -20px; }
 
-        /* --- Animated Buttons --- */
+        /* --- Buttons --- */
         .btn-container { text-align: center; margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
         .main-btn { padding: 16px 45px; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; border: none; letter-spacing: 1px; display: inline-block; }
         .routine-trigger { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
         .routine-trigger:hover { background: rgba(0, 229, 255, 0.1); box-shadow: 0 0 25px var(--accent-color); transform: scale(1.08) translateY(-3px); }
-        .gen-btn { background: linear-gradient(45deg, #00c853, #64dd17); color: white; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3); }
-        .gen-btn:hover { box-shadow: 0 0 30px rgba(0, 200, 83, 0.6); transform: scale(1.08) translateY(-3px); }
-        .dl-main-btn { background: linear-gradient(45deg, #ffab00, #ff6d00); color: white; box-shadow: 0 4px 15px rgba(255, 171, 0, 0.3); }
-        .dl-main-btn:hover { box-shadow: 0 0 30px rgba(255, 171, 0, 0.6); transform: scale(1.08) translateY(-3px); }
         .contact-btn { background: var(--accent-color); color: var(--primary-bg); text-decoration: none; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3); }
         .contact-btn:hover { box-shadow: 0 0 30px var(--accent-color); transform: scale(1.1) translateY(-5px); background: white; }
 
-        /* Routine Output (অক্ষুণ্ণ) */
+        /* Routine Section */
         .routine-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--accent-color); margin-top: 50px; display: none; text-align: left; }
-        .day-input-group { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0,229,255,0.2); margin-bottom: 15px; }
-        .input-row input { flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px; border-radius: 5px; outline: none; margin: 4px; }
         #routine-output { margin-top: 30px; background: #ffffff; color: #1a1a1a; padding: 40px; border-radius: 5px; display: none; border: 12px solid #0b1a2a; position: relative; font-family: 'Tiro Bangla', serif; }
         .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-30deg); font-size: 70px; color: rgba(0,0,0,0.03); font-weight: bold; pointer-events: none; z-index: 0; }
         .routine-table { width: 100%; border-collapse: collapse; position: relative; z-index: 1; }
         .routine-table th { background: #0b1a2a; color: white; padding: 12px; border: 1px solid #333; }
         .routine-table td { padding: 12px; border: 1px solid #ddd; }
 
-        /* Partners Section (অক্ষুণ্ণ) */
         .partners-static { margin: 80px 0; text-align: center; }
         .partners-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px; padding: 20px; }
         .partner-img { width: 130px; height: auto; filter: grayscale(100%) opacity(0.6); transition: 0.4s ease; cursor: pointer; }
         .partner-img:hover { filter: grayscale(0%) opacity(1); transform: scale(1.1); filter: drop-shadow(0 0 10px var(--accent-color)); }
 
-        .project-img { width: 100%; height: 160px; background: #0b1a2a; border-radius: 10px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(0, 229, 255, 0.2); }
-        .client-avatar { width: 55px; height: 55px; border-radius: 50%; border: 2px solid var(--accent-color); object-fit: cover; }
         footer { text-align: center; padding: 40px; background: #07121d; font-size: 0.8rem; color: #546e7a; }
 
-        /* Modals & SnackBar (অক্ষুণ্ণ) */
+        /* Modals */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: auto; }
         .modal-content { background-color: var(--card-bg); margin: 5% auto; padding: 35px; border: 2px solid var(--accent-color); width: 90%; max-width: 550px; border-radius: 20px; position: relative; text-align: center; box-shadow: 0 0 40px var(--accent-color); animation: modalZoom 0.4s; }
         .close-modal { position: absolute; top: 15px; right: 20px; color: var(--accent-color); font-size: 2rem; cursor: pointer; }
@@ -154,13 +165,10 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('s-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="s-scroll">
-                <div class="card" onclick="showSnackbar('আপনার প্রোজেক্টের জন্য ওয়েব ও মোবাইল অ্যাপের সেরা সলিউশন আমরা নিশ্চিত করি।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
-                <div class="card" onclick="showSnackbar('আর্ডুইনো থেকে রোবোটিক্স—যেকোনো জটিল হার্ডওয়্যার প্রোজেক্টে আমরা আপনাকে পূর্ণ সহায়তা দিই।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
-                <div class="card" onclick="showSnackbar('আধুনিক এআই এবং মেশিন লার্নিং প্রোজেক্ট তৈরি করতে আমাদের টিম আপনার পাশে।')"><h3>AI & ML</h3><p>AI Solutions.</p></div>
-                <div class="card" onclick="showSnackbar('আপনার থিসিস রিপোর্টের ১০০% অরিজিনালিটি নিশ্চিত করুন আমাদের মাধ্যমে।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
-                <div class="card" onclick="showSnackbar('যেকোনো জটিল একাডেমিক প্রশ্নের সমাধান পাবেন এখানে।')"><h3>Question Unlock</h3><p>Research Support.</p></div>
-                <div class="card" onclick="showSnackbar('প্রয়োজনীয় সব প্রিমিয়াম ডেভেলপার রিসোর্সের অ্যাক্সেস।')"><h3>ToolBox</h3><p>Premium Tools.</p></div>
-                <div class="card" onclick="showSnackbar('প্রিমিয়াম রিসোর্সের টিপস এন্ড ট্রিকস।')"><h3>GiveWay</h3><p>Tips & Trick.</p></div>
+                <div class="card" onclick="showSnackbar('সফটওয়্যার সলিউশন সাপোর্ট।')"><h3>Software</h3><p>Web & Mobile Apps.</p></div>
+                <div class="card" onclick="showSnackbar('হার্ডওয়্যার প্রোজেক্টে সহায়তা।')"><h3>Hardware</h3><p>Arduino & Robotics.</p></div>
+                <div class="card" onclick="showSnackbar('আধুনিক এআই সলিউশন।')"><h3>AI & ML</h3><p>AI Solutions.</p></div>
+                <div class="card" onclick="showSnackbar('রিপোর্ট প্লেজিয়ারিজম চেক।')"><h3>Plagiarism</h3><p>Report Checking.</p></div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
@@ -169,11 +177,16 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
-                <div class="scroll-card" onclick="openModal('FPGA Deepfake Detection', '/images/inode-based filesystem.png', 'রিয়েল-টাইম ডিপফেক ডিটেকশন সিস্টেম যা FPGA ব্যবহার করে নয়েজ অ্যানালাইসিস করে।', false)">
-                    <div class="project-img"><img src="/images/inode-based filesystem.png" alt="FPGA Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>FPGA Deepfake Detection</h3><p>Real-time noise analysis.</p>
+                <div class="scroll-card" onclick="openModal('MiniVSFS File System', '/images/inode-based filesystem.png', 'Tiny inode-based filesystem with builder and adder tools in C (Operating System Project).', false)">
+                    <div class="project-img"><img src="/images/inode-based filesystem.png" alt="MiniVSFS Project"></div>
+                    <h3>MiniVSFS File System</h3>
+                    <p>OS Project in C Language.</p>
                 </div>
+
                 <div class="scroll-card" onclick="openModal('AI Face Recognition', '/images/Logo.png', 'হাই একুরেসি ফেস রিকগনিশন সিকিউরিটি সলিউশন।', false)">
-                    <div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>Security solutions.</p>
+                    <div class="project-img"><img src="/images/Logo.png" alt="AI Face Recognition"></div>
+                    <h3>AI Face Recognition</h3>
+                    <p>Security solutions.</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
@@ -185,9 +198,6 @@
             <div class="scroll-container" id="r-scroll">
                 <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত।', true)">
                     <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client1.png" class="client-avatar" alt="C1"><span style="color:var(--accent-color);font-weight:600">BRACU Student</span></div><p>"Amazing hardware support!"</p>
-                </div>
-                <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত।', true)">
-                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client2.png" class="client-avatar" alt="C2"><span style="color:var(--accent-color);font-weight:600">CSE Learner</span></div><p>"Best thesis guide."</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('r-scroll', 1)">&#10095;</button>
@@ -226,28 +236,25 @@
         </div>
     </div>
 
-    <div id="universalModal" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal()">&times;</span><img id="modalImg" src="" style="width:100%;border-radius:10px;"><h2 id="modalTitle" style="color:var(--accent-color);margin-top:15px;"></h2><p id="modalDesc" style="font-family:'Tiro Bangla',serif;margin-top:10px;"></p></div></div>
-    <div id="snackbar"><span style="float:right;cursor:pointer" onclick="hideSnackbar()">✕</span><div id="snackbar-text"></div></div>
+    <div id="universalModal" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal()">&times;</span><img id="modalImg" src="" style="width:100%; height: auto; border-radius:10px; object-fit: contain;"><h2 id="modalTitle" style="color:var(--accent-color);margin-top:15px;"></h2><p id="modalDesc" style="font-family:'Tiro Bangla',serif;margin-top:10px;"></p></div></div>
+    <div id="snackbar"><span class="close-snackbar" onclick="hideSnackbar()">✕</span><div id="snackbar-text"></div></div>
 
     <footer><p>&copy; 2026 CSE Project Hub - BD. All rights reserved.</p></footer>
 
     <script>
-        // Modal, Snackbar, Scroll, Routine Maker ফাংশনগুলো হুবহু আগের মতোই আছে
         function openModal(t, i, d, r) {
             document.getElementById("modalTitle").innerText = t; document.getElementById("modalImg").src = i; document.getElementById("modalDesc").innerText = d;
             const img = document.getElementById("modalImg");
-            if(r) { img.style.borderRadius = "50%"; img.style.width = "150px"; img.style.height = "150px"; }
-            else { img.style.borderRadius = "10px"; img.style.width = "100%"; img.style.height = "250px"; }
+            if(r) { img.style.borderRadius = "50%"; img.style.width = "150px"; img.style.height = "150px"; img.style.objectFit = "cover"; }
+            else { img.style.borderRadius = "10px"; img.style.width = "100%"; img.style.height = "auto"; img.style.objectFit = "contain"; }
             document.getElementById("universalModal").style.display = "block";
         }
         function closeModal() { document.getElementById("universalModal").style.display = "none"; }
-        window.onclick = function(e) { if (e.target == document.getElementById("universalModal")) closeModal(); }
-
         function showSnackbar(t) { document.getElementById("snackbar-text").innerText = t; document.getElementById("snackbar").className = "show"; }
         function hideSnackbar() { document.getElementById("snackbar").className = ""; }
         function scrollBtn(id, dir) { const el = document.getElementById(id); if (dir === 1) el.scrollBy({ left: 320, behavior: 'smooth' }); else el.scrollBy({ left: -320, behavior: 'smooth' }); }
         function toggleRoutineBox() { const b = document.getElementById('routine-ui'); b.style.display = b.style.display === 'block' ? 'none' : 'block'; }
-
+        
         const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
         const cont = document.getElementById('day-inputs-container');
         days.forEach(day => {
