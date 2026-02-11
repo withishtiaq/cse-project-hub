@@ -203,8 +203,8 @@
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
-                <div class="scroll-card" onclick="openModal('FPGA Deepfake Detection', '/images/inode-based filesystem.png', 'রিয়েল-টাইম ডিপফেক ডিটেকশন সিস্টেম যা FPGA ব্যবহার করে নয়েজ অ্যানালাইসিস করে।', false)">
-                    <div class="project-img"><img src="/images/inode-based filesystem.png" alt="FPGA Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>FPGA Deepfake Detection</h3><p>Real-time noise analysis.</p>
+                <div class="scroll-card" onclick="openModal('C-Based MiniVSFS', '/images/inode-based filesystem.png', 'একটি লাইটওয়েট ইনোড-ভিত্তিক ফাইলসিস্টেম যা সি ল্যাঙ্গুয়েজ ব্যবহার করে ডিস্ক ইমেজ তৈরি এবং ডেটা ম্যানেজমেন্ট করে।', false)">
+                    <div class="project-img"><img src="/images/inode-based filesystem.png" alt="FPGA Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>C-Based MiniVSFS</h3><p>Inode-based file system for structured block allocation and image building.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('AI Face Recognition', '/images/Logo.png', 'হাই একুরেসি ফেস রিকগনিশন সিকিউরিটি সলিউশন।', false)">
                     <div class="project-img">🤖</div><h3>AI Face Recognition</h3><p>Security solutions.</p>
