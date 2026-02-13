@@ -198,8 +198,8 @@
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('s-scroll', 1)">&#10095;</button>
         </div>
-
-        <h2 class="section-title">Our Projects</h2>
+        <br><br><br>
+        <h2 class="section-title">Academic Projects</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="p-scroll">
