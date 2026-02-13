@@ -227,6 +227,9 @@
                 <div class="scroll-card" onclick="openModal('Computer Interfacing', '/images/Computer Interfacing.png', 'একটি পূর্ণাঙ্গ কম্পিউটার ইন্টারফেসিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/Computer Interfacing.png" alt="Computer Interfacing Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Computer Interfacing</h3><p>Hardware and Software Integration.</p>
                 </div>
+                <div class="scroll-card" onclick="openModal('Electronic Devices and Circuits', '/images/Electronic Devices and Circuits.png', 'একটি পূর্ণাঙ্গ ইলেকট্রনিক ডিভাইস এবং সার্কিট প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Electronic Devices and Circuits.png" alt="Electronic Devices and Circuits Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Electronic Devices and Circuits</h3><p>Design and Implementation of Electronic Components.</p>
+                </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
