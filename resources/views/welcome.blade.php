@@ -254,7 +254,10 @@
                     <div class="project-img"><img src="/images/spoofhat.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Mail Spoofing Tool</h3><p>Mail Spoofing and Security Testing.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('Wordpress Plugin', '/images/plugin.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/plugin.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>AI & Machine Learning</h3><p>Performance Benchmarking of Supervised and Unsupervised Learning.</p>
+                    <div class="project-img"><img src="/images/plugin.png" alt="Wordpress Plugin Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Wordpress Plugin</h3><p>Custom Plugin Development for WordPress.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Smart Medical System App', '/images/mediIOT.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/mediIOT.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Smart Medical System App</h3><p>AI-based Medical Application for Smart Healthcare.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/Robotics.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/Robotics.png" alt="Robotics Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Robotics with Sensor</h3><p>Embedded Systems and Sensor Integration.</p>
