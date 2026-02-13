@@ -259,8 +259,8 @@
                 <div class="scroll-card" onclick="openModal('Smart Medical System App', '/images/mediIOT.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/mediIOT.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Smart Medical System App</h3><p>AI-based Medical Application for Smart Healthcare.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/Robotics.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/Robotics.png" alt="Robotics Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Robotics with Sensor</h3><p>Embedded Systems and Sensor Integration.</p>
+                <div class="scroll-card" onclick="openModal('Wordpress Website', '/images/website.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/website.png" alt="Wordpress Website Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Wordpress Website</h3><p>Custom Website Development for WordPress.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/MICROPROCESSORS.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/MICROPROCESSORS.png" alt="Microprocessors Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Microprocessors</h3><p>Embedded Systems and Sensor Integration.</p>
