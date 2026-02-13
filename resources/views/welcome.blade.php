@@ -212,6 +212,9 @@
                 <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
                     <div class="project-img"><img src="/images/Database Systems.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Database Project</h3><p>Using Sql, Mysql, PostSql, php.</p>
                 </div>
+                <div class="scroll-card" onclick="openModal('Artificial Intelligence', '/images/Artificial Intelligence.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Artificial Intelligence.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>AI & Machine Learning</h3><p>Performance Benchmarking of Supervised and Unsupervised Learning.</p>
+                </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
