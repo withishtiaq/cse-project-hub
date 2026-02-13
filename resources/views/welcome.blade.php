@@ -262,21 +262,6 @@
                 <div class="scroll-card" onclick="openModal('Wordpress Website', '/images/website.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/website.png" alt="Wordpress Website Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Wordpress Website</h3><p>Custom Website Development for WordPress.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/MICROPROCESSORS.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/MICROPROCESSORS.png" alt="Microprocessors Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Microprocessors</h3><p>Embedded Systems and Sensor Integration.</p>
-                </div>
-                <div class="scroll-card" onclick="openModal('Software Engineering', '/images/Software Engineering.png', 'একটি পূর্ণাঙ্গ সফটওয়্যার ইঞ্জিনিয়ারিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/Software Engineering.png" alt="Software Engineering Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Software Engineering</h3><p>Full Stack Development and Testing.</p>
-                </div>
-                <div class="scroll-card" onclick="openModal('Computer Interfacing', '/images/Computer Interfacing.png', 'একটি পূর্ণাঙ্গ কম্পিউটার ইন্টারফেসিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/Computer Interfacing.png" alt="Computer Interfacing Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Computer Interfacing</h3><p>Hardware and Software Integration.</p>
-                </div>
-                <div class="scroll-card" onclick="openModal('Electronic Devices and Circuits', '/images/Electronic Devices and Circuits.png', 'একটি পূর্ণাঙ্গ ইলেকট্রনিক ডিভাইস এবং সার্কিট প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/Electronic Devices and Circuits.png" alt="Electronic Devices and Circuits Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Electronic Devices and Circuits</h3><p>Design and Implementation of Electronic Components.</p>
-                </div>
-                <div class="scroll-card" onclick="openModal('Digital Logic Design', '/images/Digital Logic Design.png', 'একটি পূর্ণাঙ্গ ডিজিটাল লজিক ডিজাইন প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/Digital Logic Design.png" alt="Digital Logic Design Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Digital Logic Design</h3><p>Design and Implementation of Digital Circuits.</p>
-                </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('rl-scroll', 1)">&#10095;</button>
         </div>
