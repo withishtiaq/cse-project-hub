@@ -274,10 +274,10 @@
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
             <div class="scroll-container" id="r-scroll">
                 <div class="scroll-card" onclick="openModal('BRACU Student', '/images/client1.png', 'তাঁদের সার্ভিস অসাধারণ! হার্ডওয়্যার ইমপ্লিমেন্টেশন ছিল নিখুঁত।', true)">
-                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client1.png" class="client-avatar" alt="C1"><span style="color:var(--accent-color);font-weight:600">BRACU Student</span></div><p>"Amazing hardware support!"</p>
+                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client1.png" class="client-avatar" alt="C1"><div style="display: flex; flex-direction: column; text-align: left;"><span style="color:var(--accent-color); font-weight:600">BRACU Student</span> <small style="color: #8899a6; font-size: 0.85rem;">ইশতিয়াক আহমেদ</small></div></div><p>"Amazing hardware support!"</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('CSE Learner', '/images/client2.png', 'কোড কোয়ালিটি এবং ডকুমেন্টেশন ছিল অত্যন্ত উন্নত।', true)">
-                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client2.png" class="client-avatar" alt="C2"><span style="color:var(--accent-color);font-weight:600">CSE Learner</span></div><p>"Best thesis guide."</p>
+                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px"><img src="/images/client2.png" class="client-avatar" alt="C2"><div style="display: flex; flex-direction: column; text-align: left;"><span style="color:var(--accent-color); font-weight:600">BRACU Student</span> <small style="color: #8899a6; font-size: 0.85rem;">ইশতিয়াক আহমেদ</small></div></div><p>"Best thesis guide."</p>
                 </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('r-scroll', 1)">&#10095;</button>
