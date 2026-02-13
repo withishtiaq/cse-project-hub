@@ -218,6 +218,9 @@
                 <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/Robotics.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/Robotics.png" alt="Robotics Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Robotics with Sensor</h3><p>Embedded Systems and Sensor Integration.</p>
                 </div>
+                <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/MICROPROCESSORS.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/MICROPROCESSORS.png" alt="Microprocessors Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Microprocessors</h3><p>Embedded Systems and Sensor Integration.</p>
+                </div>
             </div>
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
