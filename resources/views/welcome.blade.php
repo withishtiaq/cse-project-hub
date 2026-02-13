@@ -253,8 +253,8 @@
                 <div class="scroll-card" onclick="openModal('Mail Spoofing Tool', '/images/spoofhat.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
                     <div class="project-img"><img src="/images/spoofhat.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Mail Spoofing Tool</h3><p>Mail Spoofing and Security Testing.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Artificial Intelligence', '/images/Artificial Intelligence.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
-                    <div class="project-img"><img src="/images/Artificial Intelligence.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>AI & Machine Learning</h3><p>Performance Benchmarking of Supervised and Unsupervised Learning.</p>
+                <div class="scroll-card" onclick="openModal('Wordpress Plugin', '/images/plugin.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/plugin.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>AI & Machine Learning</h3><p>Performance Benchmarking of Supervised and Unsupervised Learning.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/Robotics.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/Robotics.png" alt="Robotics Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Robotics with Sensor</h3><p>Embedded Systems and Sensor Integration.</p>
