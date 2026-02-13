@@ -250,8 +250,8 @@
                 <div class="scroll-card" onclick="openModal('Multi SMS Attemt Tool', '/images/danger3.png', 'Cisco Packet Tracer ব্যবহার করে অ্যানিমেল কিংডমের জন্য তৈরি মাল্টি-সেগমেন্ট নেটওয়ার্ক টপোলজি এবং ইন্টার-ট্রাইব কানেক্টিভিটি।', false)">
                     <div class="project-img"><img src="/images/danger3.png" alt="CISCO Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Multi SMS Attemt Tool</h3><p>Multi SMS Attack Tool for Network Security Testing.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
-                    <div class="project-img"><img src="/images/Database Systems.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Database Project</h3><p>Using Sql, Mysql, PostSql, php.</p>
+                <div class="scroll-card" onclick="openModal('Mail Spoofing Tool', '/images/spoofhat.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
+                    <div class="project-img"><img src="/images/spoofhat.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Mail Spoofing Tool</h3><p>Mail Spoofing and Security Testing.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('Artificial Intelligence', '/images/Artificial Intelligence.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
                     <div class="project-img"><img src="/images/Artificial Intelligence.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>AI & Machine Learning</h3><p>Performance Benchmarking of Supervised and Unsupervised Learning.</p>
