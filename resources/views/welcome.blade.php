@@ -242,8 +242,8 @@
         <br><br><br>
         <h2 class="section-title">Real-Life Projects</h2>
         <div class="carousel-wrapper">
-            <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
-            <div class="scroll-container" id="p-scroll">
+            <button class="nav-btn prev-btn" onclick="scrollBtn('rl-scroll', -1)">&#10094;</button>
+            <div class="scroll-container" id="rl-scroll">
                 <div class="scroll-card" onclick="openModal('Android App', '/images/RajshahiCityApp.png', 'একটি লাইটওয়েট ইনোড-ভিত্তিক ফাইলসিস্টেম যা সি ল্যাঙ্গুয়েজ ব্যবহার করে ডিস্ক ইমেজ তৈরি এবং ডেটা ম্যানেজমেন্ট করে।', false)">
                     <div class="project-img"><img src="/images/RajshahiCityApp.png" alt="VSFS Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Android App</h3><p>Rajshahi City App</p>
                 </div>
@@ -275,7 +275,7 @@
                     <div class="project-img"><img src="/images/Digital Logic Design.png" alt="Digital Logic Design Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Digital Logic Design</h3><p>Design and Implementation of Digital Circuits.</p>
                 </div>
             </div>
-            <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
+            <button class="nav-btn next-btn" onclick="scrollBtn('rl-scroll', 1)">&#10095;</button>
         </div>
 
 
