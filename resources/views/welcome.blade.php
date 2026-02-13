@@ -237,6 +237,50 @@
             <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
         </div>
 
+
+
+        <br><br><br>
+        <h2 class="section-title">Real-Life Projects</h2>
+        <div class="carousel-wrapper">
+            <button class="nav-btn prev-btn" onclick="scrollBtn('p-scroll', -1)">&#10094;</button>
+            <div class="scroll-container" id="p-scroll">
+                <div class="scroll-card" onclick="openModal('Android App', '/images/RajshahiCityApp.png', 'একটি লাইটওয়েট ইনোড-ভিত্তিক ফাইলসিস্টেম যা সি ল্যাঙ্গুয়েজ ব্যবহার করে ডিস্ক ইমেজ তৈরি এবং ডেটা ম্যানেজমেন্ট করে।', false)">
+                    <div class="project-img"><img src="/images/RajshahiCityApp.png" alt="VSFS Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Android App</h3><p>Rajshahi City App</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Multi-Tribe Network using Cisco', '/images/Cisco Packet Tracer.png', 'Cisco Packet Tracer ব্যবহার করে অ্যানিমেল কিংডমের জন্য তৈরি মাল্টি-সেগমেন্ট নেটওয়ার্ক টপোলজি এবং ইন্টার-ট্রাইব কানেক্টিভিটি।', false)">
+                    <div class="project-img"><img src="/images/Cisco Packet Tracer.png" alt="CISCO Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Cisco Packet Tracer</h3><p>Hierarchical Tribal Networking.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
+                    <div class="project-img"><img src="/images/Database Systems.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Database Project</h3><p>Using Sql, Mysql, PostSql, php.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Artificial Intelligence', '/images/Artificial Intelligence.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Artificial Intelligence.png" alt="AI Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>AI & Machine Learning</h3><p>Performance Benchmarking of Supervised and Unsupervised Learning.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/Robotics.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Robotics.png" alt="Robotics Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Robotics with Sensor</h3><p>Embedded Systems and Sensor Integration.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Robotics with Sensor', '/images/MICROPROCESSORS.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/MICROPROCESSORS.png" alt="Microprocessors Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Microprocessors</h3><p>Embedded Systems and Sensor Integration.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Software Engineering', '/images/Software Engineering.png', 'একটি পূর্ণাঙ্গ সফটওয়্যার ইঞ্জিনিয়ারিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Software Engineering.png" alt="Software Engineering Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Software Engineering</h3><p>Full Stack Development and Testing.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Computer Interfacing', '/images/Computer Interfacing.png', 'একটি পূর্ণাঙ্গ কম্পিউটার ইন্টারফেসিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Computer Interfacing.png" alt="Computer Interfacing Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Computer Interfacing</h3><p>Hardware and Software Integration.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Electronic Devices and Circuits', '/images/Electronic Devices and Circuits.png', 'একটি পূর্ণাঙ্গ ইলেকট্রনিক ডিভাইস এবং সার্কিট প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Electronic Devices and Circuits.png" alt="Electronic Devices and Circuits Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Electronic Devices and Circuits</h3><p>Design and Implementation of Electronic Components.</p>
+                </div>
+                <div class="scroll-card" onclick="openModal('Digital Logic Design', '/images/Digital Logic Design.png', 'একটি পূর্ণাঙ্গ ডিজিটাল লজিক ডিজাইন প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
+                    <div class="project-img"><img src="/images/Digital Logic Design.png" alt="Digital Logic Design Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Digital Logic Design</h3><p>Design and Implementation of Digital Circuits.</p>
+                </div>
+            </div>
+            <button class="nav-btn next-btn" onclick="scrollBtn('p-scroll', 1)">&#10095;</button>
+        </div>
+
+
+
+
         <h2 class="section-title">Client Reviews</h2>
         <div class="carousel-wrapper">
             <button class="nav-btn prev-btn" onclick="scrollBtn('r-scroll', -1)">&#10094;</button>
