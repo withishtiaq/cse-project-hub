@@ -247,10 +247,10 @@
                 <div class="scroll-card" onclick="openModal('Android App', '/images/RajshahiCityApp.png', 'একটি লাইটওয়েট ইনোড-ভিত্তিক ফাইলসিস্টেম যা সি ল্যাঙ্গুয়েজ ব্যবহার করে ডিস্ক ইমেজ তৈরি এবং ডেটা ম্যানেজমেন্ট করে।', false)">
                     <div class="project-img"><img src="/images/RajshahiCityApp.png" alt="VSFS Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Android App</h3><p>Rajshahi City App</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Multi-Tribe Network using Cisco', '/images/Cisco Packet Tracer.png', 'Cisco Packet Tracer ব্যবহার করে অ্যানিমেল কিংডমের জন্য তৈরি মাল্টি-সেগমেন্ট নেটওয়ার্ক টপোলজি এবং ইন্টার-ট্রাইব কানেক্টিভিটি।', false)">
-                    <div class="project-img"><img src="/images/Cisco Packet Tracer.png" alt="CISCO Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Cisco Packet Tracer</h3><p>Hierarchical Tribal Networking.</p>
+                <div class="scroll-card" onclick="openModal('Multi SMS Attemt Tool', '/images/danger3.png', 'Cisco Packet Tracer ব্যবহার করে অ্যানিমেল কিংডমের জন্য তৈরি মাল্টি-সেগমেন্ট নেটওয়ার্ক টপোলজি এবং ইন্টার-ট্রাইব কানেক্টিভিটি।', false)">
+                    <div class="project-img"><img src="/images/danger3.png" alt="CISCO Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Multi SMS Attemt Tool</h3><p>Multi SMS Attack Tool for Network Security Testing.</p>
                 </div>
-                <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
+                <div class="scroll-card" onclick="openModal('Database Management System', '/images/Database Systems.png', 'একটি ডাটাবেস ম্যানেজমেন্ট সিস্টেম যা যেকোনো সফটওয়্যার কিংবা সিস্টেমের সকল ডাটা সুনির্দিষ্ট আকারে বিন্যাস্ত করে সাজানো', false)">
                     <div class="project-img"><img src="/images/Database Systems.png" alt="Database Project" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div><h3>Database Project</h3><p>Using Sql, Mysql, PostSql, php.</p>
                 </div>
                 <div class="scroll-card" onclick="openModal('Artificial Intelligence', '/images/Artificial Intelligence.png', 'একটি পূর্ণাঙ্গ মেশিন লার্নিং প্রজেক্ট সম্পন্ন করতে হবে এবং সেটি রিপোর্টে উপস্থাপন করতে হবে', false)">
